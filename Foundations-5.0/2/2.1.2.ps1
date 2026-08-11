@@ -37,11 +37,13 @@ if (-not $DefaultPolicy) {
 
 if (-not $DefaultPolicy.EnableFileFilter) {
     Write-Host "** FAIL : EnableFileFilter is disabled. **"
+    return
 }
 
 if ($RequiredExtensions.Count -gt 0) {
     $MissingExtensions = ($RequiredExtensions | Sort-Object ) -join ', '
-    Write-Host "** FAIL : Missing Extensions ** `n $MissingExtensions"
+    Write-Host "** INFO : Missing Extensions ** `n $MissingExtensions"
+    Write-Host "This is not an issue for Foundations 5.0 Compliance"
 }
 
-Write-Host "** PASS : All required Default extensions are configured. **"
+Write-Host "** PASS : Common Attachment Filter is Enabled. **"
