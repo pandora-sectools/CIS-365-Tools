@@ -54,7 +54,7 @@ Required Roles:
 - InTune Administrator / Intune Read Only Operator
 - View-Only Organization Management
 - Graph Data Connect Administrator
-
+- Privileged Role Administrator
 
 MGGraph Permissions:
 - Organization.Read.All
