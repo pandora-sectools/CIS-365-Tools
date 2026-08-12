@@ -9,7 +9,8 @@ if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
 
 $Params = @(
     'BccSuspiciousOutboundMail',
-    'NotifyOutboundSpam'
+    'NotifyOutboundSpam',
+    'NotifyOutboundSpamRecipients'
 )
 
 Write-Host "Get-HostedOutboundSpamFilterPolicy | Where-Object { $_.Name -eq `"Default`" }"
@@ -29,11 +30,13 @@ foreach ($Policy in $AntiSpamPolicy) {
     $Obj = [PSCustomObject]@{
         BccSuspiciousOutboundMail     = $Policy.BccSuspiciousOutboundMail
         NotifyOutboundSpam            = $Policy.NotifyOutboundSpam
-        AuditState                    = "FAIL"
+        NotifyOutboundSpamRecipients  = $Policy.NotifyOutboundSpamRecipients
+        AuditState                    = "PASS"
     }
     
     if ($Obj.BccSuspiciousOutboundMail -ne $true) { $Obj.AuditState = "FAIL" }
     if ($Obj.NotifyOutboundSpam -ne $true) { $Obj.AuditState = "FAIL" }
+    if (-not $Obj.NotifyOutboundSpamRecipients) { $Obj.AuditState = "FAIL" }
     $ASPReport.Add($Obj)
 }
 
