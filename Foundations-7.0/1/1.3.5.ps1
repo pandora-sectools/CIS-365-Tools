@@ -5,4 +5,11 @@
 Connect-MgGraph -Scopes "OrgSettings-Forms.Read.All" -NoWelcome
 
 $uri = 'https://graph.microsoft.com/beta/admin/forms/settings'
-Invoke-MgGraphRequest -Uri $uri | select isInOrgFormsPhishingScanEnabled
+$Policy = Invoke-MgGraphRequest -Uri $uri | Select-Object isInOrgFormsPhishingScanEnabled
+$Policy | Format-List
+
+if ($Policy.isInOrgFormsPhishingScanEnabled -eq $true) {
+    Write-Host "** PASS **"
+} else {
+    Write-Host "** FAIL **"
+}
