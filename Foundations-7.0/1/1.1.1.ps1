@@ -10,8 +10,28 @@ $PrivilegedRoles = $DirectoryRoles | Where-Object { $_.DisplayName -like "*Admin
 $PrivilegedRoles += $DirectoryRoles | Where-Object { $_.DisplayName -eq "Global Reader" }
 
 # Get Member details for these roles
-$RoleMembers = $PrivilegedRoles | ForEach-Object { Get-MgDirectoryRoleMember -DirectoryRoleId $_.Id } | Select-Object Id -Unique
-$PrivilegedUsers = $RoleMembers | ForEach-Object { Get-MgUser -UserId $_.Id -Property UserPrincipalName, DisplayName, Id, OnPremisesSyncEnabled}
+$RoleMembers = $PrivilegedRoles | ForEach-Object {
+    Get-MgDirectoryRoleMember -DirectoryRoleId $_.Id
+} | Sort-Object Id -Unique
+
+# Retrieve users represented by those role members
+$PrivilegedUsers = foreach ($RoleMember in $RoleMembers) {
+
+    $DirectoryObject = Get-MgDirectoryObject -DirectoryObjectId $RoleMember.Id
+    $ObjectType = $DirectoryObject.AdditionalProperties['@odata.type']
+
+    if ($ObjectType -eq '#microsoft.graph.user') {
+        Get-MgUser -UserId $RoleMember.Id `
+            -Property UserPrincipalName,DisplayName,Id,OnPremisesSyncEnabled
+    }
+
+    if ($ObjectType -eq '#microsoft.graph.group') {
+        Get-MgGroupTransitiveMemberAsUser -GroupId $RoleMember.Id -All `
+            -Property UserPrincipalName,DisplayName,Id,OnPremisesSyncEnabled
+    }
+}
+
+$PrivilegedUsers = $PrivilegedUsers | Sort-Object Id -Unique
 
 # Get synced admins
 $SyncedPrivilegedUsers = $PrivilegedUsers | Where-Object { $_.OnPremisesSyncEnabled -eq $true }

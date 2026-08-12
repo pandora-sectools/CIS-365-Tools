@@ -11,15 +11,28 @@ $PrivilegedRoles = $DirectoryRoles | Where-Object {
     $_.DisplayName -like "*Administrator*" -or $_.DisplayName -eq "Global Reader"
 }
 
-# Get the members of these various roles
+# Get Member details for these roles
 $RoleMembers = $PrivilegedRoles | ForEach-Object {
     Get-MgDirectoryRoleMember -DirectoryRoleId $_.Id
-} | Select-Object Id -Unique
-    
-# Retrieve details about the members in these roles
-$PrivilegedUsers = $RoleMembers | ForEach-Object {
-    Get-MgUser -UserId $_.Id -Property UserPrincipalName, DisplayName, Id
+} | Sort-Object Id -Unique
+
+# Retrieve users represented by those role members
+$PrivilegedUsers = foreach ($RoleMember in $RoleMembers) {
+
+    $DirectoryObject = Get-MgDirectoryObject -DirectoryObjectId $RoleMember.Id
+    $ObjectType = $DirectoryObject.AdditionalProperties['@odata.type']
+
+    if ($ObjectType -eq '#microsoft.graph.user') {
+        Get-MgUser -UserId $RoleMember.Id -Property UserPrincipalName,DisplayName,Id
+    }
+
+    if ($ObjectType -eq '#microsoft.graph.group') {
+        Get-MgGroupTransitiveMemberAsUser -GroupId $RoleMember.Id -All `
+            -Property UserPrincipalName,DisplayName,Id
+    }
 }
+
+$PrivilegedUsers = $PrivilegedUsers | Sort-Object Id -Unique
 
 $Report = [System.Collections.Generic.List[Object]]::new()
 foreach ($Admin in $PrivilegedUsers) {
