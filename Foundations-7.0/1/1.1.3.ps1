@@ -42,7 +42,7 @@ foreach ($object in $RoleMembers)
 $GlobalAdmins = $($GlobalAdmins | select DisplayName,UserPrincipalName -Unique)
 $GlobalAdminCount = @($GlobalAdmins).Count
 
-if ( 2 < $GlobalAdminCount -lt 4) {
+if ( $GlobalAdminCount -lt 2 ) {
     $Result = "FAIL"
 } elseif ( $GlobalAdminCount -gt 4) {
     $Result = "FAIL"
