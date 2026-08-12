@@ -8,11 +8,10 @@ if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
 }
 
 $MBXPolicy = Get-OwaMailboxPolicy -Identity OwaMailboxPolicy-Default | Format-List BookingsMailboxCreationEnabled
+$MBXPolicy | Format-List AccountEnabled
 
 if ($MBXPolicy.BookingsMailboxCreationEnabled) {
     Write-Host "** FAIL **"
 } else {
     Write-Host "** PASS **"
 }
-
-$MBXPolicy | Format-List AccountEnabled
