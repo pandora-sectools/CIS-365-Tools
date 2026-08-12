@@ -4,10 +4,10 @@
 
 set-executionpolicy -ExecutionPolicy Bypass -Scope CurrentUser
 
+Az Login
 Connect-ExchangeOnline
 Connect-IPPSSession
 Connect-MicrosoftTeams
-# Az Login
 Connect-MgGraph -Scopes `
     "Domain.Read.All", `
     "Directory.Read.All", `
