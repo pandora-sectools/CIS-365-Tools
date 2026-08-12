@@ -32,9 +32,9 @@ foreach ($Policy in $OutboundSpamPolicy) {
     if ($Obj.Name -ne "Default") {$Obj.AuditState = "PARTIAL"}
     if ($Obj.RecipientLimitExternalPerHour -gt 500) {$Obj.AuditState = "FAIL"}
     if ($Obj.RecipientLimitExternalPerHour -eq 0) {$Obj.AuditState = "FAIL"}
-    if ($Obj.RecipientLimitInternalPerHour -eq 1000) {$Obj.AuditState = "FAIL"}
+    if ($Obj.RecipientLimitInternalPerHour -gt 1000) {$Obj.AuditState = "FAIL"}
     if ($Obj.RecipientLimitInternalPerHour -eq 0) {$Obj.AuditState = "FAIL"}
-    if ($Obj.RecipientLimitPerDay -eq 1000) {$Obj.AuditState = "FAIL"}
+    if ($Obj.RecipientLimitPerDay -gt 1000) {$Obj.AuditState = "FAIL"}
     if ($Obj.RecipientLimitPerDay -eq 0) {$Obj.AuditState = "FAIL"}
     if ($Obj.ActionWhenThresholdReached -ne "BlockUser") {$Obj.AuditState = "FAIL"}
     if ($Obj.NotifyOutboundSpamRecipients -notmatch "@" ) {$Obj.AuditState = "FAIL"}
