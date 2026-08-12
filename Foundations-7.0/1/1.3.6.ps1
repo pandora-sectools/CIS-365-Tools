@@ -10,7 +10,7 @@ $LockboxStatus = Get-OrganizationConfig | Select-Object CustomerLockBoxEnabled
 $LockboxStatus | Format-List AccountEnabled
 
 
-if ($LockboxStatus) {
+if ($LockboxStatus.CustomerLockBoxEnabled -eq $true) {
     Write-Host "** PASS **"
 } else {
     Write-Host "** FAIL **"
