@@ -6,12 +6,12 @@ Connect-MgGraph -Scopes "Policy.Read.All" -NoWelcome
 
 $DeviceRegistrationPolicy = Invoke-MgGraphRequest `
     -Method GET `
-    -Uri "https://graph.microsoft.com/beta/policies/deviceRegistrationPolicy"
+    -Uri "https://graph.microsoft.com/v1.0/policies/deviceRegistrationPolicy"
 
 $AzureADJoin = $DeviceRegistrationPolicy.localAdminPassword
-$AzureADJoin | Format-List isEnabled
+Write-Host "LocalAdminPassword Enabled: $($AzureADJoin.isEnabled)"
 
-if ($PassStatus -contains $AzureADJoin.isEnabled.'@odata.type') {
+if ($AzureADJoin.isEnabled -eq $true) {
     Write-Host "** PASS **"
 } else {
     Write-Host "** FAIL **"

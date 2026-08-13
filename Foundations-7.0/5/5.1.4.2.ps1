@@ -8,7 +8,7 @@ $DeviceRegistrationPolicy = Invoke-MgGraphRequest `
     -Method GET `
     -Uri "https://graph.microsoft.com/v1.0/policies/deviceRegistrationPolicy"
 
-$DeviceRegistrationPolicy | Format-List userDeviceQuota
+Write-Host "User Device Quota: $($DeviceRegistrationPolicy.userDeviceQuota)"
 
 if ($DeviceRegistrationPolicy.userDeviceQuota -le 10) {
     Write-Host "** PASS **"

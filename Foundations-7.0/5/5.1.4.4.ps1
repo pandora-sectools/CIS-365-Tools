@@ -14,7 +14,10 @@ $DeviceRegistrationPolicy = Invoke-MgGraphRequest `
     -Uri "https://graph.microsoft.com/beta/policies/deviceRegistrationPolicy"
 
 $AzureADJoin = $DeviceRegistrationPolicy.azureADJoin.localAdmins
-$AzureADJoin | Format-List registeringUsers
+
+[PSCustomObject]@{
+    RegisteringUsersType = $AzureADJoin.registeringUsers.'@odata.type'
+} | Format-List
 
 if ($PassStatus -contains $AzureADJoin.registeringUsers.'@odata.type') {
     Write-Host "** PASS **"

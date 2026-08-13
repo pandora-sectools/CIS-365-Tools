@@ -9,7 +9,7 @@ $DeviceRegistrationPolicy = Invoke-MgGraphRequest `
     -Uri "https://graph.microsoft.com/beta/policies/deviceRegistrationPolicy"
 
 $AzureADJoin = $DeviceRegistrationPolicy.azureADJoin
-$AzureADJoin | Format-List enableGlobalAdmins
+Write-Host "enableGlobalAdmins: $($azureADJoin.localAdmins.enableGlobalAdmins)"
 
 if ($azureADJoin.localAdmins.enableGlobalAdmins) {
     Write-Host "** FAIL **"
