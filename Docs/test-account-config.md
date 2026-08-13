@@ -31,7 +31,7 @@ MGGraph Permissions:
 - DeviceManagementConfiguration.Read.All
 - DeviceManagementManagedDevices.Read.All
 - DeviceManagementServiceConfig.Read.All
-
+- OnPremDirectorySynchronization.Read.All
 
 
 \[1\] An annoying issue with mordern CIS testing is the incessant blocking of powershell tools by Entra. There are a couple ways to get around this issue:

@@ -1,0 +1,56 @@
+# 5.2.2.9 Ensure a managed device is required for authentication (Automated)
+# E3 Level 1
+# E5 Level 1
+
+Connect-MgGraph -Scopes "Policy.Read.All" -NoWelcome
+
+$URI = "https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies"
+$Policies = (Invoke-MgGraphRequest -Method GET -Uri $URI).value
+
+$PolicyReport = [System.Collections.Generic.List[Object]]::new()
+
+foreach ($Policy in $Policies) {
+
+    $IncludedUsers = @($Policy.conditions.users.includeUsers)
+    $IncludedApps  = @($Policy.conditions.applications.includeApplications)
+    $BuiltIn       = @($Policy.grantControls.builtInControls)
+    $Operator      = $Policy.grantControls.operator
+
+    $InvalidControls = @(
+        $BuiltIn |
+            Where-Object { $_ -notin @("compliantDevice","domainJoinedDevice") }
+    )
+
+    $Obj = [PSCustomObject]@{
+        DisplayName           = $Policy.displayName
+        State                 = $Policy.state
+        IncludeUsers          = $IncludedUsers -join ", "
+        IncludeApplications   = $IncludedApps -join ", "
+        BuiltInControls       = $BuiltIn -join ", "
+        InvalidControls       = $InvalidControls -join ", "
+        Operator              = $Operator
+        UserExclusions        = @($Policy.conditions.users.excludeUsers).Count
+        ApplicationExclusions = @($Policy.conditions.applications.excludeApplications).Count
+        AuditState            = "PASS"
+    }
+
+    if ($Obj.State -ne "enabled") { $Obj.AuditState = "FAIL" }
+    if ($IncludedUsers -notcontains "All") { $Obj.AuditState = "FAIL" }
+    if ($IncludedApps -notcontains "All") { $Obj.AuditState = "FAIL" }
+    if ($BuiltIn -notcontains "compliantDevice") { $Obj.AuditState = "FAIL" }
+    if ($InvalidControls.Count -gt 0) { $Obj.AuditState = "FAIL" }
+    if ($Obj.Operator -ne "OR") { $Obj.AuditState = "FAIL" }
+
+    $PolicyReport.Add($Obj)
+}
+
+$PassingPolicies = $PolicyReport |
+    Where-Object { $_.AuditState -eq "PASS" }
+
+if (@($PassingPolicies).Count -gt 0) {
+    Write-Host "** PASS : Found a Conditional Access policy requiring a managed device. **"
+    $PassingPolicies | Format-List
+} else {
+    Write-Host "** FAIL : No qualifying Conditional Access policy requiring a managed device was found. **"
+    $PolicyReport | Format-List
+}

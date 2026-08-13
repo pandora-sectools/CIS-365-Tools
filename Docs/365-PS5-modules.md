@@ -169,6 +169,7 @@ Required Roles:
 
 MGGraph Permissions:
 
+- AccessReview.Read.All
 - Organization.Read.All
 - Directory.Read.All
 - Policy.Read.All
@@ -183,3 +184,4 @@ MGGraph Permissions:
 - DeviceManagementConfiguration.Read.All
 - DeviceManagementManagedDevices.Read.All
 - DeviceManagementServiceConfig.Read.All
+- OnPremDirectorySynchronization.Read.All

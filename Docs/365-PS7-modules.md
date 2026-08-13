@@ -178,3 +178,4 @@ MGGraph Permissions:
 - DeviceManagementConfiguration.Read.All
 - DeviceManagementManagedDevices.Read.All
 - DeviceManagementServiceConfig.Read.All
+- OnPremDirectorySynchronization.Read.All
