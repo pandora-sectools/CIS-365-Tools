@@ -58,28 +58,30 @@ Do **NOT** reinstall any modules. Pin the given versions **ONLY.** newer version
 - PSResourceGet
   - `Install-PSResource -Name Microsoft.PowerShell.PSResourceGet -Reinstall -TrustRepository -ErrorAction Continue`
 - Exchange Online Management **3.9.2**
-  - `Install-PSResource -Name ExchangeOnlineManagement -Version 3.9.2 -Scope CurrentUser -TrustRepository`
-- Exchange PowerShell
-  - `Install-PSResource -Name ExchangePowerShell -Reinstall -TrustRepository -ErrorAction Continue`
+  - `Install-PSResource -Name ExchangeOnlineManagement -Version 3.9.2 -Scope CurrentUser -TrustRepository -ErrorAction Continue`
 - Microsoft Teams **7.7.0**
-  - `Install-PSResource -Name MicrosoftTeams -Version 7.7.0 -Scope CurrentUser -TrustRepository`
-- SharePoint Online
-  - `Install-PSResource -Name Microsoft.Online.SharePoint.PowerShell -Reinstall -TrustRepository -ErrorAction Continue`
-- Microsoft 365 DSC
-  - `Install-PSResource -Name Microsoft365DSC -Reinstall -TrustRepository -ErrorAction Continue`
+  - `Install-PSResource -Name MicrosoftTeams -Version 7.7.0 -Scope CurrentUser -TrustRepository -ErrorAction Continue`
+- SharePoint Online **16.0.27111.12000**
+  - `Install-PSResource -Name Microsoft.Online.SharePoint.PowerShell -Version 16.0.27111.12000 -TrustRepository -ErrorAction Continue`
+- Microsoft 365 DSC **1.26.812.1**
+  - `Install-PSResource -Name Microsoft365DSC -TrustRepository -ErrorAction Continue`
+- Microsoft PnP.Powershell
+  - `Install-PSResource -Name PnP.PowerShell -Version 3.1.0 -TrustRepository -ErrorAction Continue`
+
 
 Do **NOT** install the `Microsoft.Graph` umbrella module
 Install the required Microsoft Graph workload modules individually at **2.36.1**:
 
-- `Install-PSResource -Name Microsoft.Graph.Authentication -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Applications -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.DeviceManagement -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Groups -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Identity.DirectoryManagement -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Identity.Governance -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Identity.SignIns -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Reports -Version 2.36.1 -Scope CurrentUser -TrustRepository`
-- `Install-PSResource -Name Microsoft.Graph.Users -Version 2.36.1 -Scope CurrentUser -TrustRepository`
+- `Install-PSResource -Name Microsoft.Graph.Applications -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Authentication -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.DeviceManagement -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Groups -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Identity.DirectoryManagement -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Identity.Governance -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Identity.SignIns -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Reports -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+- `Install-PSResource -Name Microsoft.Graph.Users -Version 2.36.1 -TrustRepository -ErrorAction Continue`
+
 
 
 ### Verify Module Versions

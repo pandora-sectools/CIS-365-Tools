@@ -14,24 +14,22 @@ CLI Programs:
 - Microsoft.AzureCLI
 
 - PowerShell Modules:
-    - PnP.PowerShell 3.1.0
+    - PnP.PowerShell                                                         3.1.0
     - Packagemangement
     - PowershellGet
-    - ExchangePowerShell
-    - ExchangeOnlineManagement 3.9.2
-    - MicrosoftTeams 7.7.0
-    - Microsoft.Online.Sharepoint.PowerShell 16.0.27111.12000
-    - Microsoft365DSC
-    - Microsoft.Graph
-        - Microsoft.Graph.Applications
-        - Microsoft.Graph.DeviceManagement
-        - Microsoft.Graph.Identity.Governance
-        - Microsoft.Graph.Identity.SignIns
-        - Microsoft.Graph.Identity.DirectooryManagement
-        - Microsoft.Graph.Reports
-        - Microsoft.Graph.Users
-        - Microsoft.Graph.Authentication
-        - Microsoft.Graph.Identity.SignIns
+    - ExchangeOnlineManagement                                               3.9.2
+    - MicrosoftTeams                                                         7.7.0
+    - Microsoft.Online.Sharepoint.PowerShell                      16.0.27111.12000
+    - Microsoft365DSC                                                   1.26.812.1
+    - Microsoft.Graph.Authentication                                        2.36.1
+    - Microsoft.Graph.Applications                                          2.36.1
+    - Microsoft.Graph.DeviceManagement                                      2.36.1
+    - Microsoft.Graph.Groups                                                2.36.1
+    - Microsoft.Graph.Identity.DirectoryManagement                          2.36.1
+    - Microsoft.Graph.Identity.Governance                                   2.36.1
+    - Microsoft.Graph.Identity.Signins                                      2.36.1
+    - Microsoft.Graph.Reports                                               2.36.1
+    - Microsoft.Graph.Users                                                 2.36.1
 
 **NOTE** Be sure to remove all Az powershell modules. they conflict with the AzureCLI Tools
 and can cause these scripts to not run correctly! Remove with this command:
