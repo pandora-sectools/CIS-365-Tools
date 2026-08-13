@@ -30,7 +30,7 @@ MGGraph Permissions:
 - OrgSettings-AppsAndServices.Read.All
 - DeviceManagementConfiguration.Read.All
 - DeviceManagementManagedDevices.Read.All
-
+- DeviceManagementServiceConfig.Read.All
 
 
 
