@@ -1,6 +1,6 @@
-# 7.2.1 Ensure modern authentication for SharePoint applications is required (Automated)
-# E3 Level 1
-# E5 Level 1
+# 7.2.4 Ensure OneDrive content sharing is restricted (Automated)
+# E3 Level 2
+# E5 Level 2
 
 # connect to exchange if not already connected
 if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
@@ -23,11 +23,12 @@ catch {
     Connect-SPOService -Url $SPOAdminUrl -UseSystemBrowser $true
 }
 
-$SPOTenant = Get-SPOTenant
-Write-Host "SPOTenant.LegacyAuthProtocolsEnabled: $($SPOTenant.LegacyAuthProtocolsEnabled)"
 
-if ($SPOTenant.LegacyAuthProtocolsEnabled -eq $false) {
-    Write-Host "** PASS : Modern authentication for SharePoint applications is required. **"
+$SPOTenant = Get-SPOTenant
+Write-Host "SPOTenant.OneDriveSharingCapability: $($SPOTenant.OneDriveSharingCapability)"
+
+if ($SPOTenant.OneDriveSharingCapability -eq "Disabled") {
+    Write-Host "** PASS : OneDrive content sharing is restricted. **"
 } else {
-    Write-Host "** FAIL : Legacy authentication for SharePoint applications is enabled. **"
+    Write-Host "** FAIL : OneDrive content sharing is not restricted. **"
 }

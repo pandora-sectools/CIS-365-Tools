@@ -13,9 +13,15 @@ $TenantDomain = (Get-AcceptedDomain |
 $TenantName = $TenantDomain.ToString().Split('.')[0]
 $SPOAdminUrl = "https://$TenantName-admin.sharepoint.com"
 
-Connect-SPOService -Url $SPOAdminUrl
-
-$SPOTenant = Get-SPOTenant
+# connect to SharePoint if not already connected
+try {
+    Get-SPOTenant -ErrorAction Stop | Out-Null
+}
+catch {
+    # import first as a fix for the terrible module design.
+    Import-Module Microsoft.Online.SharePoint.PowerShell -RequiredVersion 16.0.27111.12000
+    Connect-SPOService -Url $SPOAdminUrl -UseSystemBrowser $true
+}
 
 $PassStatus = @(
     "ExternalUserSharingOnly"
@@ -23,6 +29,7 @@ $PassStatus = @(
     "Disabled"
 )
 
+$SPOTenant = Get-SPOTenant
 Write-Host "SPOTenant.SharingCapability: $($SPOTenant.SharingCapability)"
 
 if ($PassStatus -contains $SPOTenant.SharingCapability) {
