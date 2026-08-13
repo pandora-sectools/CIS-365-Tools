@@ -3,43 +3,43 @@
 
 1 Microsoft 365 admin center
 
-    1.1 Users
+    1.1 Users 
         1.1.1  (L1) Ensure Administrative accounts are cloud-only (Automated)
         1.1.2  (L1) Ensure two emergency access accounts have been defined (Manual)                                                                (TODO)
         1.1.3  (L1) Ensure that between two and four global admins are designated (Automated)
         1.1.4  (L1) Ensure administrative accounts use licenses with a reduced application footprint (Automated)
 
     1.2 Teams & groups
-        1.2.1  (L2) Ensure that only organizationally managed/approved public groups exist (Automated)
-        1.2.2  (L1) Ensure sign-in to shared mailboxes is blocked (Automated)
+        1.2.1  (L2) Ensure that only organizationally managed/approved public groups exist (Automated)                                             
+        1.2.2  (L1) Ensure sign-in to shared mailboxes is blocked (Automated)                                                                      
 
     1.3 Settings
-        1.3.1  (L1) Ensure the 'Password expiration policy' is set to 'Set passwords to never expire (recommended)' (Automated)
-        1.3.2  (L2) Ensure 'Idle session timeout' is set to '3 hours (or less)' for unmanaged devices (Automated)
-        1.3.3  (L2) Ensure 'External sharing' of calendars is not available (Automated)
-        1.3.4  (L1) Ensure 'User owned apps and services' is restricted (Automated)
-        1.3.5  (L1) Ensure internal phishing protection for Forms is enabled (Automated)
-        1.3.6  (L2) Ensure the customer lockbox feature is enabled (Automated)
-        1.3.7  (L2) Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web' (Automated)
+        1.3.1  (L1) Ensure the 'Password expiration policy' is set to 'Set passwords to never expire (recommended)' (Automated)                    
+        1.3.2  (L2) Ensure 'Idle session timeout' is set to '3 hours (or less)' for unmanaged devices (Automated)                                  
+        1.3.3  (L2) Ensure 'External sharing' of calendars is not available (Automated)                                                            
+        1.3.4  (L1) Ensure 'User owned apps and services' is restricted (Automated)                                                                
+        1.3.5  (L1) Ensure internal phishing protection for Forms is enabled (Automated)                                                           
+        1.3.6  (L2) Ensure the customer lockbox feature is enabled (Automated)                                                                     
+        1.3.7  (L2) Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web' (Automated)                                 
         1.3.8  (L2) Ensure that Sways cannot be shared with people outside of your organization (Manual)                                           (TODO)
 
 2 Microsoft 365 Defender
 
     2.1 Email & collaboration
-        2.1.1  (L2) Ensure Safe Links for Office Applications is Enabled (Automated)
-        2.1.2  (L1) Ensure the Common Attachment Types Filter is enabled (Automated)
-        2.1.3  (L1) Ensure notifications for internal users sending malware is Enabled (Automated)
-        2.1.4  (L2) Ensure Safe Attachments policy is enabled (Automated)
-        2.1.5  (L2) Ensure Safe Attachments for SharePoint, OneDrive, and Microsoft Teams is Enabled (Automated)
-        2.1.6  (L1) Ensure Exchange Online Spam Policies are set to notify administrators (Automated)
-        2.1.7  (L2) Ensure that an anti-phishing policy has been created (Automated)
-        2.1.8  (L1) Ensure that SPF records are published for all Exchange Domains (Automated)
-        2.1.9  (L1) Ensure that DKIM is enabled for all Exchange Online Domains (Automated)
-        2.1.10 (L1) Ensure DMARC Records for all Exchange Online domains are published (Automated)
-        2.1.11 (L2) Ensure comprehensive attachment filtering is applied (Automated)
-        2.1.12 (L1) Ensure the connection filter IP allow list is not used (Automated)
-        2.1.13 (L1) Ensure the connection filter safe list is off (Automated)
-        2.1.14 (L1) Ensure inbound anti-spam policies do not contain allowed domains (Automated)
+        2.1.1  (L2) Ensure Safe Links for Office Applications is Enabled (Automated)                                                               
+        2.1.2  (L1) Ensure the Common Attachment Types Filter is enabled (Automated)                                                               
+        2.1.3  (L1) Ensure notifications for internal users sending malware is Enabled (Automated)                                                 
+        2.1.4  (L2) Ensure Safe Attachments policy is enabled (Automated)                                                                          
+        2.1.5  (L2) Ensure Safe Attachments for SharePoint, OneDrive, and Microsoft Teams is Enabled (Automated)                                   
+        2.1.6  (L1) Ensure Exchange Online Spam Policies are set to notify administrators (Automated)                                              
+        2.1.7  (L2) Ensure that an anti-phishing policy has been created (Automated)                                                               
+        2.1.8  (L1) Ensure that SPF records are published for all Exchange Domains (Automated)                                                     
+        2.1.9  (L1) Ensure that DKIM is enabled for all Exchange Online Domains (Automated)                                                        
+        2.1.10 (L1) Ensure DMARC Records for all Exchange Online domains are published (Automated)                                                 
+        2.1.11 (L2) Ensure comprehensive attachment filtering is applied (Automated)                                                               
+        2.1.12 (L1) Ensure the connection filter IP allow list is not used (Automated)                                                             
+        2.1.13 (L1) Ensure the connection filter safe list is off (Automated)                                                                      
+        2.1.14 (L1) Ensure inbound anti-spam policies do not contain allowed domains (Automated)                                                   
 
     2.2 Cloud apps
         2.2.1  (L1) Ensure emergency access account activity is monitored (Manual)                                                                 (TODO)
@@ -47,29 +47,29 @@
     2.3 Audit
 
     2.4 System
-        2.4.1  (L1) Ensure Priority account protection is enabled and configured (Automated)
-        2.4.2  (L1) Ensure Priority accounts have 'Strict protection' presets applied (Automated)
+        2.4.1  (L1) Ensure Priority account protection is enabled and configured (Automated)                                                       
+        2.4.2  (L1) Ensure Priority accounts have 'Strict protection' presets applied (Automated)                                                  
         2.4.3  (L2) Ensure Microsoft Defender for Cloud Apps is enabled and configured (Manual)                                                    (TODO)
-        2.4.4  (L1) Ensure Zero-hour auto purge for Microsoft Teams is on (Automated)
+        2.4.4  (L1) Ensure Zero-hour auto purge for Microsoft Teams is on (Automated)                                                              
 
 
 
 
 3 Microsoft Purview
     3.1 Audit
-        3.1.1  (L1) Ensure Microsoft 365 audit log search is Enabled (Automated)
+        3.1.1  (L1) Ensure Microsoft 365 audit log search is Enabled (Automated)                                                                   
     3.2 Data loss protection
-        3.2.1  (L1) Ensure DLP policies are enabled (Manual)
+        3.2.1  (L1) Ensure DLP policies are enabled (Manual)                                                                                       
         3.2.2  (L1) Ensure DLP policies are enabled for Microsoft Teams (Automated)                                                                (TODO)
     3.3 Information Protection
-        3.3.1  (L1) Ensure Information Protection sensitivity label policies are published (Manual)
+        3.3.1  (L1) Ensure Information Protection sensitivity label policies are published (Manual)                                                
 
 
 
 
 4 Microsoft Intune admin center
-    4.1  (L2) Ensure devices without a compliance policy are marked 'not compliant' (Automated)
-    4.2  (L2) Ensure device enrollment for personally owned devices is blocked by default (Manual)
+    4.1  (L2) Ensure devices without a compliance policy are marked 'not compliant' (Automated)                                                    
+    4.2  (L2) Ensure device enrollment for personally owned devices is blocked by default (Manual)                                                 
 
 
 
@@ -80,14 +80,14 @@
 
         5.1.2 Users
             5.1.2.1  (L1) Ensure 'Per-user MFA' is disabled (Automated)                                                                            (TODO)
-            5.1.2.2  (L2) Ensure third party integrated applications are not allowed (Automated)
-            5.1.2.3  (L1) Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes' (Automated)
+            5.1.2.2  (L2) Ensure third party integrated applications are not allowed (Automated)                                                   
+            5.1.2.3  (L1) Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes' (Automated)                                      
             5.1.2.4  (L1) Ensure access to the Entra admin center is restricted (Manual)                                                           (TODO)
             5.1.2.5  (L2) Ensure the option to remain signed in is hidden (Manual)                                                                 (TODO)
             5.1.2.6  (L2) Ensure 'LinkedIn account connections' is disabled (Manual)                                                               (TODO)
 
         5.1.3 Groups
-            5.1.3.1  (L1) Ensure a dynamic group for guest users is created (Automated)
+            5.1.3.1  (L1) Ensure a dynamic group for guest users is created (Automated)                                                            
 
         5.1.5 Applications
             5.1.5.1  (L2) Ensure user consent to apps accessing company data on their behalf is not allowed (Automated)                            (TODO)
@@ -148,7 +148,7 @@
     6.2 Mail flow
         6.2.1  (L1) Ensure all forms of mail forwarding are blocked and/or disabled (Automated)                                                   (TODO)
         6.2.2  (L1) Ensure mail transport rules do not whitelist specific domains (Automated)                                                     (TODO)
-        6.2.3  (L1) Ensure email from external senders is identified (Automated)
+        6.2.3  (L1) Ensure email from external senders is identified (Automated)                                                                  
 
     6.3 Roles
         6.3.1  (L2) Ensure users installing Outlook add-ins is not allowed (Automated)                                                            (TODO)
@@ -167,7 +167,7 @@
     7.2 Policies
         7.2.1  (L1) Ensure modern authentication for SharePoint applications is required (Automated)
         7.2.2  (L1) Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)
-        7.2.3  (L1) Ensure external content sharing is restricted (Automated)
+        7.2.3  (L1) Ensure external content sharing is restricted (Automated)                                                                     
         7.2.4  (L2) Ensure OneDrive content sharing is restricted (Automated)                                                                     (TODO)
         7.2.5  (L2) Ensure that SharePoint guest users cannot share items they don't own (Automated)                                              (TODO)
         7.2.6  (L2) Ensure SharePoint external sharing is managed through domain whitelist/blacklists (Automated)                                 (TODO)
@@ -188,8 +188,8 @@
 
 8 Microsoft Teams admin center
     8.1 Teams                                                                                                                                     (TODO)
-        8.1.1  (L2) Ensure external file sharing in Teams is enabled for only approved cloud storage services (Automated)
-        8.1.2  (L1) Ensure users can't send emails to a channel email address (Automated)
+        8.1.1  (L2) Ensure external file sharing in Teams is enabled for only approved cloud storage services (Automated)                         
+        8.1.2  (L1) Ensure users can't send emails to a channel email address (Automated)                                                         
 
     8.2 Users
         8.2.1  (L2) Ensure external domains are restricted in the Teams admin center (Automated)                                                  (TODO)
@@ -214,14 +214,14 @@
         8.5.9  (L2) Ensure meeting recording is off by default (Automated)                                                                        (TODO)
 
     8.6 Messaging
-        8.6.1  (L1) Ensure users can report security concerns in Teams (Automated)
+        8.6.1  (L1) Ensure users can report security concerns in Teams (Automated)                                                                
 
 
 
 
 9 Microsoft Fabric
     9.1 Tenant settings
-        9.1.1  (L1) Ensure guest user access is restricted (Manual)
+        9.1.1  (L1) Ensure guest user access is restricted (Manual)                                                                               
         9.1.2  (L1) Ensure external user invitations are restricted (Manual)                                                                      (TODO)
         9.1.3  (L1) Ensure guest access to content is restricted (Manual)                                                                         (TODO)
         9.1.4  (L1) Ensure 'Publish to web' is restricted (Manual)                                                                                (TODO)
