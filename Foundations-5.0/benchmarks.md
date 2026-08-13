@@ -147,7 +147,7 @@
     6.2 Mail flow                                                                                                                                 (TODO)
         6.2.1  (L1) Ensure all forms of mail forwarding are blocked and/or disabled (Automated)                                                   (TODO)
         6.2.2  (L1) Ensure mail transport rules do not whitelist specific domains (Automated)                                                     (TODO)
-        6.2.3  (L1) Ensure email from external senders is identified (Automated)                                                                  (TODO)
+        6.2.3  (L1) Ensure email from external senders is identified (Automated)                                                                  
 
     6.3 Roles                                                                                                                                     (TODO)
         6.3.1  (L2) Ensure users installing Outlook add-ins is not allowed (Automated)                                                            (TODO)
@@ -164,9 +164,9 @@
 7 SharePoint admin center
 
     7.2 Policies                                                                                                                                  (TODO)
-        7.2.1  (L1) Ensure modern authentication for SharePoint applications is required (Automated)                                              (TODO)
-        7.2.2  (L1) Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)                                           (TODO)
-        7.2.3  (L1) Ensure external content sharing is restricted (Automated)                                                                     (TODO)
+        7.2.1  (L1) Ensure modern authentication for SharePoint applications is required (Automated)
+        7.2.2  (L1) Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)
+        7.2.3  (L1) Ensure external content sharing is restricted (Automated)                                                                     
         7.2.4  (L2) Ensure OneDrive content sharing is restricted (Automated)                                                                     (TODO)
         7.2.5  (L2) Ensure that SharePoint guest users cannot share items they don't own (Automated)                                              (TODO)
         7.2.6  (L2) Ensure SharePoint external sharing is managed through domain whitelist/blacklists (Automated)                                 (TODO)

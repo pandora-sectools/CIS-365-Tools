@@ -217,9 +217,9 @@
   7.1 Sites
 
   7.2 Policies
-    7.2.1 Ensure modern authentication for SharePoint applications is required (Automated)                                           (TODO)
-    7.2.2 Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)                                        (TODO)
-    7.2.3 Ensure external content sharing is restricted (Automated)                                                                  (TODO)
+    7.2.1 Ensure modern authentication for SharePoint applications is required (Automated)                                           
+    7.2.2 Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)                                        
+    7.2.3 Ensure external content sharing is restricted (Automated)                                                                  
     7.2.4 Ensure OneDrive content sharing is restricted (Automated)                                                                  (TODO)
     7.2.5 Ensure that SharePoint guest users cannot share items they don't own (Automated)                                           (TODO)
     7.2.6 Ensure SharePoint external sharing is restricted (Automated)                                                               (TODO)
