@@ -2,287 +2,274 @@
 
 1 Microsoft 365 admin center
 
-  1.1 Users
-    1.1.1 Ensure Administrative accounts are cloud-only (Automated)
-    1.1.2 Ensure two emergency access accounts have been defined (Manual)
-    1.1.3 Ensure that between two and four global admins are designated (Automated)
-    1.1.4 Ensure administrative accounts use licenses with a reduced application footprint (Automated)
+    1.1 Users
+            1.1.1    (L1)   Automated    Ensure Administrative accounts are cloud-only 
+            1.1.2    (L1)   Manual       Ensure two emergency access accounts have been defined 
+            1.1.3    (L1)   Automated    Ensure that between two and four global admins are designated 
+            1.1.4    (L1)   Automated    Ensure administrative accounts use licenses with a reduced application footprint 
 
-  1.2 Teams & groups
-    1.2.1 Ensure that only organizationally managed/approved public groups exist (Automated)
-    1.2.2 Ensure sign-in to shared mailboxes is blocked (Automated)
+    1.2 Teams & groups
+            1.2.1    (L2)   Automated    Ensure that only organizationally managed/approved public groups exist 
+            1.2.2    (L1)   Automated    Ensure sign-in to shared mailboxes is blocked 
 
-  1.3 Settings
-    1.3.1 Ensure the 'Password expiration policy' is set to 'Set passwords to never expire (recommended)' (Automated)
-    1.3.2 Ensure 'Idle session timeout' is set to '3 hours (or less)' for unmanaged devices (Automated)
-    1.3.3 Ensure 'External sharing' of calendars is not available (Automated)
-    1.3.4 Ensure 'User owned apps and services' is restricted (Automated)
-    1.3.5 Ensure internal phishing protection for Forms is enabled (Automated)
-    1.3.6 Ensure the customer lockbox feature is enabled (Automated)
-    1.3.7 Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web' (Automated)
-    1.3.8 Ensure that Sways cannot be shared with people outside of your organization (Manual)
-    1.3.9 Ensure shared bookings pages are restricted to select users (Automated)
-
-
+    1.3 Settings
+            1.3.1    (L1)   Automated    Ensure the 'Password expiration policy' is set to 'Set passwords to never expire (recommended)' 
+            1.3.2    (L2)   Automated    Ensure 'Idle session timeout' is set to '3 hours (or less)' for unmanaged devices 
+            1.3.3    (L2)   Automated    Ensure 'External sharing' of calendars is not available 
+            1.3.4    (L1)   Automated    Ensure 'User owned apps and services' is restricted 
+            1.3.5    (L1)   Automated    Ensure internal phishing protection for Forms is enabled 
+            1.3.6    (L2)   Automated    Ensure the customer lockbox feature is enabled 
+            1.3.7    (L2)   Automated    Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web' 
+            1.3.8    (L2)   Manual       Ensure that Sways cannot be shared with people outside of your organization 
+            1.3.9    (L1)   Automated    Ensure shared bookings pages are restricted to select users 
 
 
 2 Microsoft Defender
 
-  2.1 Email & collaboration
-    2.1.1 Ensure Safe Links for Office Applications is Enabled (Automated)
-    2.1.2 Ensure the Common Attachment Types Filter is enabled (Automated)
-    2.1.3 Ensure notifications for internal users sending malware is Enabled (Automated)
-    2.1.4 Ensure Safe Attachments policy is enabled (Automated)                                                                      (TODO)
-    2.1.5 Ensure Safe Attachments for SharePoint, OneDrive, and Microsoft Teams is Enabled (Automated)                               (TODO)
-    2.1.6 Ensure Exchange Online Spam Policies are set to notify administrators (Automated)
-    2.1.7 Ensure that an anti-phishing policy has been created (Automated)
-    2.1.8 Ensure that SPF records are published for all Exchange Domains (Automated)
-    2.1.9 Ensure that DKIM is enabled for all Exchange Online Domains (Automated)
-    2.1.10 Ensure DMARC records for all Exchange Online domains are published (Automated)
-    2.1.11 Ensure comprehensive attachment filtering is applied (Automated)
-    2.1.12 Ensure the connection filter IP allow list is not used (Automated)
-    2.1.13 Ensure the connection filter safe list is off (Automated)
-    2.1.14 Ensure inbound anti-spam policies do not contain allowed domains (Automated)
-    2.1.15 Ensure outbound anti-spam message limits are in place (Automated)
+    2.1 Email & collaboration
+            2.1.1     (L2)  Automated    Ensure Safe Links for Office Applications is Enabled 
+            2.1.2     (L1)  Automated    Ensure the Common Attachment Types Filter is enabled 
+            2.1.3     (L1)  Automated    Ensure notifications for internal users sending malware is Enabled 
+            2.1.4     (L2)  Automated    Ensure Safe Attachments policy is enabled                                                                       (TODO)
+            2.1.5     (L2)  Automated    Ensure Safe Attachments for SharePoint, OneDrive, and Microsoft Teams is Enabled                                (TODO)
+            2.1.6     (L1)  Automated    Ensure Exchange Online Spam Policies are set to notify administrators 
+            2.1.7     (L2)  Automated    Ensure that an anti-phishing policy has been created 
+            2.1.8     (L1)  Automated    Ensure that SPF records are published for all Exchange Domains 
+            2.1.9     (L1)  Automated    Ensure that DKIM is enabled for all Exchange Online Domains 
+            2.1.10    (L1)  Automated    Ensure DMARC records for all Exchange Online domains are published 
+            2.1.11    (L2)  Automated    Ensure comprehensive attachment filtering is applied 
+            2.1.12    (L2)  Automated    Ensure the connection filter IP allow list is not used 
+            2.1.13    (L1)  Automated    Ensure the connection filter safe list is off 
+            2.1.14    (L1)  Automated    Ensure inbound anti-spam policies do not contain allowed domains 
+            2.1.15    (L1)  Automated    Ensure outbound anti-spam message limits are in place 
 
-  2.2 Cloud apps
-    2.2.1 Ensure emergency access account activity is monitored (Manual)
+    2.2 Cloud apps
+            2.2.1     (L1)  Manual       Ensure emergency access account activity is monitored 
 
-  2.3 Audit
-
-  2.4 System
-    2.4.1 Ensure Priority account protection is enabled and configured (Automated)                                                   (TODO)
-    2.4.2 Ensure Priority accounts have 'Strict protection' presets applied (Automated)                                              (TODO)
-    2.4.3 Ensure Microsoft Defender for Cloud Apps is enabled and configured (Manual)
-    2.4.4 Ensure Zero-hour auto purge for Microsoft Teams is on (Automated)                                                          (TODO)
-    2.4.5 Ensure 'AIR' remediation is enabled (Manual)
-
-
+    2.3 Audit
+                    Intentionally Left Blank
+    2.4 System
+            2.4.1     (L1)  Automated    Ensure Priority account protection is enabled and configured                                                    (TODO)
+            2.4.2     (L1)  Automated    Ensure Priority accounts have 'Strict protection' presets applied                                               (TODO)
+            2.4.3     (L2)  Manual       Ensure Microsoft Defender for Cloud Apps is enabled and configured 
+            2.4.4     (L1)  Automated    Ensure Zero-hour auto purge for Microsoft Teams is on                                                           (TODO)
+            2.4.5     (L1)  Manual       Ensure 'AIR' remediation is enabled 
 
 
 3 Microsoft Purview
 
-  3.1 Audit
-    3.1.1 Ensure Microsoft 365 audit log search is Enabled (Automated)
+    3.1 Audit
+            3.1.1     (L1)  Automated    Ensure Microsoft 365 audit log search is Enabled 
 
-  3.2 Data Loss Protection
-    3.2.1 Ensure DLP policies are enabled (Automated) 
-    3.2.2 Ensure DLP policies are enabled for Microsoft Teams (Automated)                                                            (TODO)
-    3.2.3 Ensure DLP policies are published for Copilot users (Automated)                                                            (TODO)
+    3.2 Data Loss Protection
+            3.2.1     (L1)  Automated    Ensure DLP policies are enabled  
+            3.2.2     (L1)  Automated    Ensure DLP policies are enabled for Microsoft Teams
+            3.2.3     (L1)  Automated    Ensure DLP policies are published for Copilot users
 
-  3.3 Information Protection
-    3.3.1 Ensure Information Protection sensitivity label policies are published (Automated)
+    3.3 Information Protection
+            3.3.1     (L1)  Automated    Ensure Information Protection sensitivity label policies are published 
 
-  3.4 Insider Risk Management
-
-  3.5 Communication Compliance
-
-
-
-
-4 Microsoft Intune admin center (UNTESTED)
-
-  4.1 Ensure devices without a compliance policy are marked 'not compliant' (Automated)                                              (TODO)
-  4.2 Ensure device enrollment for personally owned devices is blocked by default (Automated)                                        (TODO)
+    3.4 Insider Risk Management
+                    Intentionally Left Blank
+    3.5 Communication Compliance
+                    Intentionally Left Blank
 
 
+4 Microsoft Intune admin center
+
+            4.1       (L1)  Automated    Ensure devices without a compliance policy are marked 'not compliant'                                           (TODO)
+            4.2       (L1)  Automated    Ensure device enrollment for personally owned devices is blocked by default                                     (TODO)
 
 
-5 Microsoft Entra admin center (UNTESTED)
+5 Microsoft Entra admin center
 
-  5.1 Entra ID
-    5.1.1 Overview
+    5.1 Entra ID
+        5.1.1 Overview
+                    Intentionally Left Blank
 
     5.1.2 Users
-      5.1.2.1 Ensure 'Per-user MFA' is disabled (Manual)
-      5.1.2.2 Ensure users cannot register applications (Automated)
-      5.1.2.3 Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes' (Automated)
-      5.1.2.4 Ensure access to the Entra admin center is restricted (Manual)
-      5.1.2.5 Ensure the option to remain signed in is hidden (Manual)
-      5.1.2.6 Ensure 'LinkedIn account connections' is disabled (Manual)
+            5.1.2.1   (L1)  Automated*   Ensure 'Per-user MFA' is disabled 
+            5.1.2.2   (L1)  Automated    Ensure users cannot register applications 
+            5.1.2.3   (L1)  Automated    Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes' 
+            5.1.2.4   (L1)  Automated*   Ensure access to the Entra admin center is restricted 
+            5.1.2.5   (L2)  Manual       Ensure the option to remain signed in is hidden 
+            5.1.2.6   (L2)  Manual       Ensure 'LinkedIn account connections' is disabled 
 
     5.1.3 Groups
-      5.1.3.1 Ensure users cannot create security groups (Automated)
-      5.1.3.2 Ensure that 'Restrict user ability to access groups features in My Groups' is set to 'Yes' (Manual)
-      5.1.3.3 Ensure that 'Owners can manage group membership requests in My Groups' is set to 'No' (Manual)
-      5.1.3.4 Ensure that 'Users can create Microsoft 365 groups in Azure portals, API or PowerShell' is set to 'No' (Automated)
+            5.1.3.1   (L1)  Automated    Ensure users cannot create security groups 
+            5.1.3.2   (L2)  Manual       Ensure that 'Restrict user ability to access groups features in My Groups' is set to 'Yes' 
+            5.1.3.3   (L1)  Manual       Ensure that 'Owners can manage group membership requests in My Groups' is set to 'No' 
+            5.1.3.4   (L2)  Automated    Ensure that 'Users can create Microsoft 365 groups in Azure portals, API or PowerShell' is set to 'No' 
 
     5.1.4 Devices
-      5.1.4.1 Ensure the ability to join devices to Entra is restricted (Automated)
-      5.1.4.2 Ensure the maximum number of devices per user is limited (Automated)
-      5.1.4.3 Ensure the GA role is not added as a local administrator during Entra join (Automated)
-      5.1.4.4 Ensure local administrator assignment is limited during Entra join (Automated)
-      5.1.4.5 Ensure Local Administrator Password Solution is enabled (Automated)
-      5.1.4.6 Ensure users are restricted from recovering BitLocker keys (Automated)                                                 (TODO)
+            5.1.4.1   (L2)  Automated    Ensure the ability to join devices to Entra is restricted 
+            5.1.4.2   (L1)  Automated    Ensure the maximum number of devices per user is limited 
+            5.1.4.3   (L1)  Automated    Ensure the GA role is not added as a local administrator during Entra join 
+            5.1.4.4   (L1)  Automated    Ensure local administrator assignment is limited during Entra join 
+            5.1.4.5   (L1)  Automated    Ensure Local Administrator Password Solution is enabled 
+            5.1.4.6   (L2)  Automated    Ensure users are restricted from recovering BitLocker keys                                                      (TODO)
 
     5.1.5 Enterprise apps
-      5.1.5.1 Ensure user consent to apps accessing company data on their behalf is not allowed (Automated)                          (TODO)
-      5.1.5.2 Ensure the admin consent workflow is enabled (Automated)                                                               
-      5.1.5.3 Ensure password addition is blocked for applications (Automated)                                                       (TODO)
-      5.1.5.4 Ensure password lifetime for applications does not exceed 180 days (Automated)                                         
-      5.1.5.5 Ensure new application passwords are system-generated (Automated)                                                      
-      5.1.5.6 Ensure maximum certificate lifetime for applications does not exceed 180 days (Automated)                              
+            5.1.5.1   (L2)  Automated    Ensure user consent to apps accessing company data on their behalf is not allowed                               (TODO)
+            5.1.5.2   (L1)  Automated    Ensure the admin consent workflow is enabled                                                                    (TODO)
+            5.1.5.3   (L2)  Automated    Ensure password addition is blocked for applications                                                            (TODO)
+            5.1.5.4   (L1)  Automated    Ensure password lifetime for applications does not exceed 180 days                                              (TODO)
+            5.1.5.5   (L1)  Automated    Ensure new application passwords are system-generated                                                           (TODO)
+            5.1.5.6   (L1)  Automated    Ensure maximum certificate lifetime for applications does not exceed 180 days                                   (TODO)
 
     5.1.6 External Identities
-      5.1.6.1 Ensure that collaboration invitations are sent to allowed domains only (Automated)                                     
-      5.1.6.2 Ensure that guest user access is restricted (Automated)                                                                
-      5.1.6.3 Ensure guest user invitations are limited (Automated)                                                                  (TODO)
+            5.1.6.1   (L2)  Automated    Ensure that collaboration invitations are sent to allowed domains only                                          (TODO)
+            5.1.6.2   (L1)  Automated    Ensure that guest user access is restricted                                                                     (TODO)
+            5.1.6.3   (L2)  Automated    Ensure guest user invitations are limited                                                                       (TODO)
 
     5.1.7 User experiences
-
+                    Intentionally Left Blank
     5.1.8 Hybrid management
-      5.1.8.1 Ensure that password hash sync is enabled for hybrid deployments (Automated)                                           
+            5.1.8.1   (L1)  Automated    Ensure that password hash sync is enabled for hybrid deployments                                                (TODO)
 
-  5.2 ID Protection
-    5.2.1 Identity Protection
+    5.2 ID Protection
+            5.2.1 Identity Protection
+                    Intentionally Left Blank
 
-    5.2.2 Conditional Access
-      5.2.2.1  Ensure multifactor authentication is enabled for all users in administrative roles (Automated)                        
-      5.2.2.2  Ensure multifactor authentication is enabled for all users (Automated)                                                
-      5.2.2.3  Enable Conditional Access policies to block legacy authentication (Automated)                                         
-      5.2.2.4  Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users (Automated)      
-      5.2.2.5  Ensure 'Phishing-resistant MFA strength' is required for Administrators (Automated)                                   
-      5.2.2.6  Enable Identity Protection user risk policies (Automated)                                                             
-      5.2.2.7  Enable Identity Protection sign-in risk policies (Automated)                                                          
-      5.2.2.8  Ensure 'sign-in risk' is blocked for medium and high risk (Automated)                                                 (TODO)
-      5.2.2.9  Ensure a managed device is required for authentication (Automated)                                                    
-      5.2.2.10 Ensure a managed device is required to register security information (Automated)                                      
-      5.2.2.11 Ensure sign-in frequency for Intune Enrollment is set to 'Every time' (Automated)                                     
-      5.2.2.12 Ensure the device code sign-inFormat-Listow is blocked (Automated)                                                    
-      5.2.2.13 Ensure that periodic reauthentication is required for all users (Automated)                                           (TODO)
-      5.2.2.14 Ensure trusted 'named locations' are defined (Automated)                                                              (TODO)
-      5.2.2.15 Ensure exclusionary geographic access controls are utilized (Automated)                                               (TODO)
-      5.2.2.16 Ensure Token Protection is enforced for session tokens (Automated)                                                    (TODO)
-      5.2.2.17 Ensure authentication transfer is blocked (Automated)                                                                 (TODO)
+        5.2.2 Conditional Access
+            5.2.2.1   (L1)  Automated    Ensure multifactor authentication is enabled for all users in administrative roles
+            5.2.2.2   (L1)  Automated    Ensure multifactor authentication is enabled for all users
+            5.2.2.3   (L1)  Automated    Enable Conditional Access policies to block legacy authentication
+            5.2.2.4   (L1)  Automated    Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users
+            5.2.2.5   (L2)  Automated    Ensure 'Phishing-resistant MFA strength' is required for Administrators
+            5.2.2.6   (L1)  Automated    Enable Identity Protection user risk policies
+            5.2.2.7   (L1)  Automated    Enable Identity Protection sign-in risk policies
+            5.2.2.8   (L2)  Automated    Ensure 'sign-in risk' is blocked for medium and high risk
+            5.2.2.9   (L1)  Automated    Ensure a managed device is required for authentication
+            5.2.2.10  (L1)  Automated    Ensure a managed device is required to register security information
+            5.2.2.11  (L1)  Automated    Ensure sign-in frequency for Intune Enrollment is set to 'Every time'
+            5.2.2.12  (L1)  Automated    Ensure the device code sign-in flow is blocked
+            5.2.2.13  (L1)  Automated    Ensure that periodic reauthentication is required for all users                                                 (TODO)
+            5.2.2.14  (L2)  Automated    Ensure trusted 'named locations' are defined                                                                    (TODO)
+            5.2.2.15  (L2)  Automated    Ensure exclusionary geographic access controls are utilized                                                     (TODO)
+            5.2.2.16  (L2)  Automated    Ensure Token Protection is enforced for session tokens                                                          (TODO)
+            5.2.2.17  (L1)  Automated    Ensure authentication transfer is blocked                                                                       (TODO)
 
-    5.2.3 Authentication Methods
-      5.2.3.1  Ensure Microsoft Authenticator is configured to protect against MFA fatigue (Automated)                               (TODO)
-      5.2.3.2  Ensure custom banned passwords lists are used (Automated)                                                             
-      5.2.3.3  Ensure password protection is enabled for on-prem Active Directory (Automated)                                        
-      5.2.3.4  Ensure all member users are 'MFA capable' (Automated)                                                                 
-      5.2.3.5  Ensure weak authentication methods are disabled (Automated)                                                           
-      5.2.3.6  Ensure system-preferred multifactor authentication is enabled (Automated)                                             (TODO)
-      5.2.3.7  Ensure the email OTP authentication method is disabled (Automated)                                                    (TODO)
-      5.2.3.8  Ensure that Account 'Lockout threshold' is '10' or less (Automated)                                                   
-      5.2.3.9  Ensure that Account 'Lockout duration in seconds' is at least 60 seconds (Automated)                                  
-      5.2.3.10 Ensure Microsoft Authenticator on companion applications is disabled (Automated)                                      
+        5.2.3 Authentication Methods
+            5.2.3.1   (L1)  Automated    Ensure Microsoft Authenticator is configured to protect against MFA fatigue                                     (TODO)
+            5.2.3.2   (L1)  Automated    Ensure custom banned passwords lists are used
+            5.2.3.3   (L1)  Automated    Ensure password protection is enabled for on-prem Active Directory
+            5.2.3.4   (L1)  Automated    Ensure all member users are 'MFA capable'
+            5.2.3.5   (L1)  Automated    Ensure weak authentication methods are disabled
+            5.2.3.6   (L1)  Automated    Ensure system-preferred multifactor authentication is enabled                                                   (TODO)
+            5.2.3.7   (L2)  Automated    Ensure the email OTP authentication method is disabled                                                          (TODO)
+            5.2.3.8   (L1)  Automated    Ensure that Account 'Lockout threshold' is '10' or less
+            5.2.3.9   (L1)  Automated    Ensure that Account 'Lockout duration in seconds' is at least 60 seconds
+            5.2.3.10  (L1)  Automated    Ensure Microsoft Authenticator on companion applications is disabled
 
-    5.2.4 Password reset
-      5.2.4.1  Ensure 'Self service password reset enabled' is set to 'All' (Manual)                                                 (TODO)
-      5.2.4.2  Ensure that 2 methods are required for password reset (Manual)                                                        (TODO)
-      5.2.4.3  Ensure SSPR registration and authentication re-confirmation are required (Manual)                                     (TODO)
-      5.2.4.4  Ensure that users are notified on password resets (Manual)                                                            (TODO)
-      5.2.4.5  Ensure all admins are notified when other admins reset their password (Manual)                                        (TODO)
+        5.2.4 Password reset
+            5.2.4.1   (L1)  Manual       Ensure 'Self service password reset enabled' is set to 'All'                                                    (TODO)
+            5.2.4.2   (L2)  Manual       Ensure that 2 methods are required for password reset                                                           (TODO)
+            5.2.4.3   (L1)  Manual       Ensure SSPR registration and authentication re-confirmation are required                                        (TODO)
+            5.2.4.4   (L1)  Manual       Ensure that users are notified on password resets                                                               (TODO)
+            5.2.4.5   (L1)  Manual       Ensure all admins are notified when other admins reset their password                                           (TODO)
 
-  5.3 ID Governance
-    5.3.1 Ensure privileged role assignments are activated and not assigned (Automated)                                              
-    5.3.2 Ensure 'Access reviews' for guest users are configured (Automated)                                                         
-    5.3.3 Ensure 'Access reviews' for privileged roles are configured (Automated)                                                    
-    5.3.4 Ensure approval is required for Global Administrator role activation (Automated)                                           
-    5.3.5 Ensure approval is required for Privileged Role Administrator activation (Automated)                                       
-
-
+    5.3 ID Governance
+            5.3.1     (L2)  Automated    Ensure privileged role assignments are activated and not assigned                                               (TODO)
+            5.3.2     (L1)  Automated    Ensure 'Access reviews' for guest users are configured                                                          (TODO)
+            5.3.3     (L1)  Automated    Ensure 'Access reviews' for privileged roles are configured                                                     (TODO)
+            5.3.4     (L1)  Automated    Ensure approval is required for Global Administrator role activation                                            (TODO)
+            5.3.5     (L1)  Automated    Ensure approval is required for Privileged Role Administrator activation                                        (TODO)
 
 
 6 Exchange admin center
 
-  6.1 Audit
-    6.1.1 Ensure 'AuditDisabled' organizationally is set to 'False' (Automated)                                                      
-    6.1.2 Ensure mailbox audit actions are configured (Automated)                                                                    
-    6.1.3 Ensure 'AuditBypassEnabled' is not enabled on mailboxes (Automated)                                                        
+    6.1 Audit
+            6.1.1    (L1)   Automated    Ensure 'AuditDisabled' organizationally is set to 'False'                                                       (TODO)
+            6.1.2    (L1)   Automated    Ensure mailbox audit actions are configured                                                                     (TODO)
+            6.1.3    (L1)   Automated    Ensure 'AuditBypassEnabled' is not enabled on mailboxes                                                         (TODO)
 
-  6.2 MailFormat-Listow
-    6.2.1 Ensure all forms of mail forwarding are blocked and/or disabled (Automated)                                                
-    6.2.2 Ensure mail transport rules do not whitelist specific domains (Automated)                                                  
-    6.2.3 Ensure email from external senders is identified (Automated)                                                               
+    6.2 Mail flow
+            6.2.1    (L1)   Automated    Ensure all forms of mail forwarding are blocked and/or disabled                                                 (TODO)
+            6.2.2    (L1)   Automated    Ensure mail transport rules do not whitelist specific domains                                                   (TODO)
+            6.2.3    (L1)   Automated    Ensure email from external senders is identified                                                                (TODO)
 
-  6.3 Roles
-    6.3.1 Ensure users installing Outlook add-ins is not allowed (Automated)                                                         (TODO)
-    6.3.2 Ensure the ability to add personal email accounts and calendars is disabled (Automated)                                    
+    6.3 Roles
+            6.3.1    (L2)   Automated    Ensure users installing Outlook add-ins is not allowed                                                          (TODO)
+            6.3.2    (L1)   Automated    Ensure the ability to add personal email accounts and calendars is disabled                                     (TODO)
 
-  6.4 Reports
-
-  6.5 Settings
-    6.5.1 Ensure modern authentication for Exchange Online is enabled (Automated)                                                    
-    6.5.2 Ensure MailTips are enabled for end users (Automated)                                                                      
-    6.5.3 Ensure additional storage providers are restricted in Outlook on the web (Automated)454                                    (TODO)
-    6.5.4 Ensure SMTP AUTH is disabled (Automated)                                                                                   
-    6.5.5 Ensure Direct Send submissions are rejected (Automated)                                                                    (TODO)
-
-
+    6.4 Reports
+                    Intentionally Left Blank
+    6.5 Settings
+            6.5.1    (L1)   Automated    Ensure modern authentication for Exchange Online is enabled                                                     (TODO)
+            6.5.2    (L1)   Automated    Ensure MailTips are enabled for end users                                                                       (TODO)
+            6.5.3    (L2)   Automated    Ensure additional storage providers are restricted in Outlook on the web                                        (TODO)
+            6.5.4    (L1)   Automated    Ensure SMTP AUTH is disabled                                                                                    (TODO)
+            6.5.5    (L2)   Automated    Ensure Direct Send submissions are rejected                                                                     (TODO)
 
 
 7 SharePoint admin center
 
-  7.1 Sites
+    7.1 Sites
+                    Intentionally Left Blank
+    7.2 Policies
+            7.2.1    (L1)   Automated    Ensure modern authentication for SharePoint applications is required
+            7.2.2    (L1)   Automated    Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled
+            7.2.3    (L1)   Automated    Ensure external content sharing is restricted
+            7.2.4    (L2)   Automated    Ensure OneDrive content sharing is restricted                                                                   (TODO)
+            7.2.5    (L2)   Automated    Ensure that SharePoint guest users cannot share items they don't own                                            (TODO)
+            7.2.6    (L2)   Automated    Ensure SharePoint external sharing is restricted                                                                (TODO)
+            7.2.7    (L1)   Automated    Ensure link sharing is restricted in SharePoint and OneDrive                                                    (TODO)
+            7.2.8    (L2)   Automated    Ensure external sharing is restricted by security group                                                         (TODO)
+            7.2.9    (L1)   Automated    Ensure guest access to a site or OneDrive will expire automatically                                             (TODO)
+            7.2.10   (L1)   Automated    Ensure reauthentication with verification code is restricted                                                    (TODO)
+            7.2.11   (L1)   Automated    Ensure the SharePoint default sharing link permission is set                                                    (TODO)
 
-  7.2 Policies
-    7.2.1 Ensure modern authentication for SharePoint applications is required (Automated)                                           
-    7.2.2 Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled (Automated)                                        
-    7.2.3 Ensure external content sharing is restricted (Automated)                                                                  
-    7.2.4 Ensure OneDrive content sharing is restricted (Automated)                                                                  
-    7.2.5 Ensure that SharePoint guest users cannot share items they don't own (Automated)                                           
-    7.2.6 Ensure SharePoint external sharing is restricted (Automated)                                                               
-    7.2.7 Ensure link sharing is restricted in SharePoint and OneDrive (Automated)                                                   
-    7.2.8 Ensure external sharing is restricted by security group (Automated)                                                        
-    7.2.9 Ensure guest access to a site or OneDrive will expire automatically (Automated)                                            
-    7.2.10 Ensure reauthentication with verification code is restricted (Automated)                                                  
-    7.2.11 Ensure the SharePoint default sharing link permission is set (Automated)                                                  
-
-  7.3 Settings
-    7.3.1 Ensure Office 365 SharePoint infected files are disallowed for download (Automated)                                        (TODO)
-
-
+    7.3 Settings
+            7.3.1    (L2)   Automated    Ensure Office 365 SharePoint infected files are disallowed for download                                         (TODO)
 
 
 8 Microsoft Teams admin center
 
-  8.1 Teams
-    8.1.1 Ensure external file sharing in Teams is enabled for only approved cloud storage services (Automated)
-    8.1.2 Ensure users can't send emails to a channel email address (Automated)
+    8.1 Teams
+            8.1.1    (L2)   Automated    Ensure external file sharing in Teams is enabled for only approved cloud storage services 
+            8.1.2    (L1)   Automated    Ensure users can't send emails to a channel email address 
 
-  8.2 Users
-    8.2.1 Ensure external domains are restricted in the Teams admin center (Automated)                                               (TODO)
-    8.2.2 Ensure communication with unmanaged Teams users is disabled (Automated) 
-    8.2.3 Ensure external Teams users cannot initiate conversations (Automated)
-    8.2.4 Ensure the organization cannot communicate with accounts in trial Teams tenants (Automated)
+    8.2 Users
+            8.2.1    (L2)   Automated    Ensure external domains are restricted in the Teams admin center
+            8.2.2    (L1)   Automated    Ensure communication with unmanaged Teams users is disabled  
+            8.2.3    (L1)   Automated    Ensure external Teams users cannot initiate conversations 
+            8.2.4    (L1)   Automated    Ensure the organization cannot communicate with accounts in trial Teams tenants 
 
-  8.3 Teams devices
+    8.3 Teams devices
 
-  8.4 Teams apps
-    8.4.1 Ensure app permission policies are configured (Manual)
+    8.4 Teams apps
+            8.4.1    (L1)   Automated*   Ensure app permission policies are configured 
 
-  8.5 Meetings
-    8.5.1 Ensure anonymous users can't join a meeting (Automated)                                                                    (TODO)
-    8.5.2 Ensure anonymous users and dial-in callers can't start a meeting (Automated)
-    8.5.3 Ensure only people in my org can bypass the lobby (Automated)
-    8.5.4 Ensure users dialing in can't bypass the lobby (Automated)
-    8.5.5 Ensure meeting chat does not allow anonymous users (Automated)
-    8.5.6 Ensure only organizers and co-organizers can present (Automated)                                                           (TODO)
-    8.5.7 Ensure external participants can't give or request control (Automated)
-    8.5.8 Ensure external meeting chat is off (Automated)                                                                            (TODO)
-    8.5.9 Ensure meeting recording is off by default (Automated)                                                                     (TODO)
+    8.5 Meetings
+            8.5.1    (L2)   Automated    Ensure anonymous users can't join a meeting                                                                     (TODO)
+            8.5.2    (L1)   Automated    Ensure anonymous users and dial-in callers can't start a meeting 
+            8.5.3    (L1)   Automated    Ensure only people in my org can bypass the lobby 
+            8.5.4    (L1)   Automated    Ensure users dialing in can't bypass the lobby 
+            8.5.5    (L2)   Automated    Ensure meeting chat does not allow anonymous users 
+            8.5.6    (L2)   Automated    Ensure only organizers and co-organizers can present                                                            (TODO)
+            8.5.7    (L1)   Automated    Ensure external participants can't give or request control 
+            8.5.8    (L2)   Automated    Ensure external meeting chat is off                                                                             (TODO)
+            8.5.9    (L2)   Automated    Ensure meeting recording is off by default                                                                      (TODO)
 
-  8.6 Messaging
-    8.6.1 Ensure users can report security concerns in Teams (Automated)
-
-
+    8.6 Messaging
+            8.6.1    (L1)   Automated    Ensure users can report security concerns in Teams 
 
 
 9 Microsoft Fabric
 
-  9.1 Tenant settings
-    9.1.1 Ensure guest user access is restricted (Automated)                                                                         
-    9.1.2 Ensure external user invitations are restricted (Automated)                                                                (TODO)
-    9.1.3 Ensure guest access to content is restricted (Automated)                                                                   (TODO)
-    9.1.4 Ensure 'Publish to web' is restricted (Automated)                                                                          (TODO)
-    9.1.5 Ensure 'Interact with and share R and Python' visuals is 'Disabled' (Automated)                                            (TODO)
-    9.1.6 Ensure 'Allow users to apply sensitivity labels for content' is 'Enabled' (Automated)                                      (TODO)
-    9.1.7 Ensure shareable links are restricted (Automated)                                                                          (TODO)
-    9.1.8 Ensure enabling of external data sharing is restricted (Automated)                                                         (TODO)
-    9.1.9 Ensure 'Block ResourceKey Authentication' is 'Enabled' (Automated)                                                         (TODO)
-    9.1.10 Ensure access to APIs by service principals is restricted (Automated)                                                     (TODO)
-    9.1.11 Ensure service principals cannot create and use profiles (Automated)                                                      (TODO)
-    9.1.12 Ensure service principals ability to create workspaces, connections and deployment pipelines is restricted (Automated)    (TODO)
+    9.1 Tenant settings
+            9.1.1    (L1)   Automated    Ensure guest user access is restricted
+            9.1.2    (L1)   Automated    Ensure external user invitations are restricted                                                                 (TODO)
+            9.1.3    (L1)   Automated    Ensure guest access to content is restricted                                                                    (TODO)
+            9.1.4    (L1)   Automated    Ensure 'Publish to web' is restricted                                                                           (TODO)
+            9.1.5    (L2)   Automated    Ensure 'Interact with and share R and Python' visuals is 'Disabled'                                             (TODO)
+            9.1.6    (L1)   Automated    Ensure 'Allow users to apply sensitivity labels for content' is 'Enabled'                                       (TODO)
+            9.1.7    (L1)   Automated    Ensure shareable links are restricted                                                                           (TODO)
+            9.1.8    (L1)   Automated    Ensure enabling of external data sharing is restricted                                                          (TODO)
+            9.1.9    (L1)   Automated    Ensure 'Block ResourceKey Authentication' is 'Enabled'                                                          (TODO)
+            9.1.10   (L1)   Automated    Ensure access to APIs by service principals is restricted                                                       (TODO)
+            9.1.11   (L1)   Automated    Ensure service principals cannot create and use profiles                                                        (TODO)
+            9.1.12   (L1)   Automated    Ensure service principals ability to create workspaces, connections and deployment pipelines is restricted      (TODO)
 
 ```
