@@ -7,21 +7,21 @@
 if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
     Connect-ExchangeOnline -ShowBanner:$false
 }
+
 $TenancyNonCompliant = $false
 $TenancyDomains = Get-AcceptedDomain | Where-Object {$_.IsCoExistenceDomain -eq $false}
 
 foreach ($Domain in $TenancyDomains) {
 
     Write-Host "`nTesting Domain: $($Domain.Name)"
-    # $DomainSPFCompliant = $false
 
     # Fetch DNS Records
     try {
         $DNS = $(Resolve-DnsName "_dmarc.$($Domain.DomainName)" -Type TXT -ErrorAction Stop)
+        $DNS | Format-List
     }
     catch {
         Write-Host "** Records Invalid or irretrievable for $($Domain.Name) **"
         $TenancyNonCompliant = $true
-        # continue
     }
 }

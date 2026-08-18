@@ -44,22 +44,67 @@ foreach ($RoleId in $RequiredRoles.Keys) {
             InstanceDurationInDays          = $Review.settings.instanceDurationInDays
             AutoApplyDecisionsEnabled       = $Review.settings.autoApplyDecisionsEnabled
             DefaultDecision                 = $Review.settings.defaultDecision
-            IncludesUsers                   = $PrincipalQueries -match "/v1.0/users"
-            IncludesGroups                  = $PrincipalQueries -match "/v1.0/groups"
+            IncludesUsers                   = [bool]($PrincipalQueries -match "/v1.0/users")
+            IncludesGroups                  = [bool]($PrincipalQueries -match "/v1.0/groups")
             AuditState                      = "PASS"
         }
 
-        if ($Obj.RecurrenceType -notin @("absoluteMonthly","weekly")) { $Obj.AuditState = "FAIL" }
-        if ([datetime]$Obj.RecurrenceStartDate -gt (Get-Date)) { $Obj.AuditState = "FAIL" }
-        if ($Obj.ReviewerCount -lt 1) { $Obj.AuditState = "FAIL" }
-        if ($Obj.MailNotificationsEnabled -ne $true) { $Obj.AuditState = "FAIL" }
-        if ($Obj.ReminderNotificationsEnabled -ne $true) { $Obj.AuditState = "FAIL" }
-        if ($Obj.JustificationRequiredOnApproval -ne $true) { $Obj.AuditState = "FAIL" }
-        if ($Obj.InstanceDurationInDays -gt 14) { $Obj.AuditState = "FAIL" }
-        if ($Obj.AutoApplyDecisionsEnabled -ne $true) { $Obj.AuditState = "FAIL" }
-        if ($Obj.DefaultDecision -ne "None") { $Obj.AuditState = "FAIL" }
-        if ($Obj.IncludesUsers -ne $true) { $Obj.AuditState = "FAIL" }
-        if ($Obj.IncludesGroups -ne $true) { $Obj.AuditState = "FAIL" }
+    if ($Obj.RecurrenceType -notin @("absoluteMonthly","weekly")) {
+        $Obj.RecurrenceType = "**$($Obj.RecurrenceType)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ([datetime]$Obj.RecurrenceStartDate -gt (Get-Date)) {
+        $Obj.RecurrenceStartDate = "**$($Obj.RecurrenceStartDate)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.ReviewerCount -lt 1) {
+        $Obj.ReviewerCount = "**$($Obj.ReviewerCount)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.MailNotificationsEnabled -ne $true) {
+        $Obj.MailNotificationsEnabled = "**$($Obj.MailNotificationsEnabled)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.ReminderNotificationsEnabled -ne $true) {
+        $Obj.ReminderNotificationsEnabled = "**$($Obj.ReminderNotificationsEnabled)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.JustificationRequiredOnApproval -ne $true) {
+        $Obj.JustificationRequiredOnApproval = "**$($Obj.JustificationRequiredOnApproval)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.InstanceDurationInDays -gt 14) {
+        $Obj.InstanceDurationInDays = "**$($Obj.InstanceDurationInDays)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.AutoApplyDecisionsEnabled -ne $true) {
+        $Obj.AutoApplyDecisionsEnabled = "**$($Obj.AutoApplyDecisionsEnabled)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.DefaultDecision -ne "None") {
+        $Obj.DefaultDecision = "**$($Obj.DefaultDecision)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.IncludesUsers -ne $true) {
+        $Obj.IncludesUsers = "**$($Obj.IncludesUsers)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.IncludesGroups -ne $true) {
+        $Obj.IncludesGroups = "**$($Obj.IncludesGroups)**"
+        $Obj.AuditState = "FAIL"
+    }
+
+    if ($Obj.AuditState -eq "FAIL") { $Obj.AuditState = "FAIL" }
 
         $ReviewReport.Add($Obj)
     }

@@ -4,8 +4,10 @@
 
 
 # connect to Purview if not already connected
-try { Get-RetentionCompliancePolicy -ErrorAction Stop | Out-Null }
-catch { Connect-IPPSSession | Out-Null }
+if (-not (Get-Command Get-DlpCompliancePolicy -ErrorAction SilentlyContinue)) {
+    Import-Module ExchangeOnlineManagement -RequiredVersion 3.9.2
+    Connect-IPPSSession
+}
 
 $Params = @(
     'Mode',

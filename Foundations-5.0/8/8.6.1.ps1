@@ -1,4 +1,5 @@
 # 8.6.1 Ensure users can report security concerns in Teams (Automated)
+# E3 Level 1
 # E5 Level 1
 
 # connect to exchange if not already connected

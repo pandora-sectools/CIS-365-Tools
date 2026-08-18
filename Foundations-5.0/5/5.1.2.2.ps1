@@ -1,6 +1,6 @@
-# 5.1.2.2 Ensure users cannot register applications (Automated)
-# E3 Level 1
-# E5 Level 1
+# 5.1.2.2 (L2) Ensure third party integrated applications are not allowed (Automated)
+# E3 Level 2
+# E5 Level 2
 
 Connect-MgGraph -Scopes "Policy.Read.All" -NoWelcome
 

@@ -2,9 +2,13 @@
 # E3 Level 1
 # E5 Level 1
 
+# connect to exchange if not already connected
+if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
+    Connect-ExchangeOnline -ShowBanner:$false
+}
 
 # connect to Purview if not already connected
-try { Get-RetentionCompliancePolicy -ErrorAction Stop | Out-Null }
+try { Get-DlpCompliancePolicy -ErrorAction Stop | Out-Null }
 catch { Connect-IPPSSession | Out-Null }
 
 $Params = @(
