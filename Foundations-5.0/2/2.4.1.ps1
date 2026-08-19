@@ -2,6 +2,7 @@
 # E5 Level 1
 
 # connect to exchange if not already connected
+Import-Module ExchangeOnlineManagement -RequiredVersion 3.9.2
 if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
     Connect-ExchangeOnline -ShowBanner:$false
 }
