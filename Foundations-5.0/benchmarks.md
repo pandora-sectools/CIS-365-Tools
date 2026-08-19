@@ -164,9 +164,9 @@
             7.2.4      (L2)    (Automated)    Ensure OneDrive content sharing is restricted                                                                 (TODO) 
             7.2.5      (L2)    (Automated)    Ensure that SharePoint guest users cannot share items they don't own                                          (TODO) 
             7.2.6      (L2)    (Automated)    Ensure SharePoint external sharing is managed through domain whitelist/blacklists                             (TODO) 
-            7.2.7      (L1)    (Automated)    Ensure link sharing is restricted in SharePoint and OneDrive                                                  (TODO) 
+            7.2.7      (L1)    (Automated)    Ensure link sharing is restricted in SharePoint and OneDrive
             7.2.8      (L2)    (Manual)       Ensure external sharing is restricted by security group                                                       (TODO) 
-            7.2.9      (L1)    (Automated)    Ensure guest access to a site or OneDrive will expire automatically                                           (TODO) 
+            7.2.9      (L1)    (Automated)    Ensure guest access to a site or OneDrive will expire automatically
             7.2.10     (L1)    (Automated)    Ensure reauthentication with verification code is restricted                                                  (TODO) 
             7.2.11     (L1)    (Automated)    Ensure the SharePoint default sharing link permission is set                                                  (TODO) 
 
