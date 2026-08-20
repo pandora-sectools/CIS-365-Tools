@@ -1,4 +1,4 @@
-# 5.1.2.1 Ensure 'Per-user MFA' is disabled (Manual)
+# 5.1.2.1 Ensure 'Per-user MFA' is disabled (Automated)
 # E3 Level 1
 # E5 Level 1
 
