@@ -4,7 +4,15 @@
 Connect-MgGraph -Scopes "AccessReview.Read.All" -NoWelcome
 
 $URI = "https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions"
-$Reviews = (Invoke-MgGraphRequest -Method GET -Uri $URI).value
+
+try {
+    $Reviews = (Invoke-MgGraphRequest -Method GET -Uri $URI -ErrorAction Stop).value
+}
+catch {
+    Write-Host "** ERROR : Unable to retrieve access reviews. Check AccessReview.Read.All and the signed-in user's Entra role. **"
+    Write-Host $_.Exception.Message
+    return
+}
 
 $ReviewReport = [System.Collections.Generic.List[Object]]::new()
 
