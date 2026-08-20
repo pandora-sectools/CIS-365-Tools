@@ -8,8 +8,7 @@ if (-not (Get-ConnectionInformation -ErrorAction SilentlyContinue)) {
 }
 
 $LockboxStatus = Get-OrganizationConfig | Select-Object CustomerLockBoxEnabled
-$LockboxStatus | Format-List AccountEnabled
-
+Write-Host "isOfficeStoreEnabled: $($LockboxStatus.CustomerLockBoxEnabled)"
 
 if ($LockboxStatus.CustomerLockBoxEnabled -eq $true) {
     Write-Host "** PASS **"
