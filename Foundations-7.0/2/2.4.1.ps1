@@ -1,4 +1,5 @@
 # 2.4.1 Ensure Priority account protection is enabled and configured (Automated)
+# Defender for Office 365 Plan 2
 # E5 Level 1
 
 # connect to exchange if not already connected

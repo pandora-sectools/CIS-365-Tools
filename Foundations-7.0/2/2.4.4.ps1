@@ -1,4 +1,5 @@
 # 2.4.4 Ensure Zero-hour auto purge for Microsoft Teams is on (Automated)
+# Defender for Office 365 Plan 2
 # E5 Level 1
 
 # connect to exchange if not already connected
