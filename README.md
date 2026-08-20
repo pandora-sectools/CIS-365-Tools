@@ -43,18 +43,20 @@ and can cause these scripts to not run correctly! Remove with this command:
 ### Required Test User Permissions
 
 Required Roles:
+
 - Global Reader
 - Reports Reader
 - Security Reader
 - Teams Reader
 - SharePoint Administrator
 - Exchange Administrator
+- Identity Governance Administrator
 - InTune Administrator / Intune Read Only Operator
 - View-Only Organization Management
 - Graph Data Connect Administrator
-- Privileged Role Administrator
 
 MGGraph Permissions:
+
 - Organization.Read.All
 - Directory.Read.All
 - Policy.Read.All
@@ -68,3 +70,5 @@ MGGraph Permissions:
 - OrgSettings-AppsAndServices.Read.All
 - DeviceManagementConfiguration.Read.All
 - DeviceManagementManagedDevices.Read.All
+- DeviceManagementServiceConfig.Read.All
+- OnPremDirectorySynchronization.Read.All

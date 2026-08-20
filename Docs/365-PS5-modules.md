@@ -86,6 +86,7 @@ Install the required Microsoft Graph workload modules individually at **2.25.0**
 - `Install-Module -Name Microsoft.Graph.Identity.SignIns -RequiredVersion 2.25.0 -Scope CurrentUser -Force`
 - `Install-Module -Name Microsoft.Graph.Reports -RequiredVersion 2.25.0 -Scope CurrentUser -Force`
 - `Install-Module -Name Microsoft.Graph.Users -RequiredVersion 2.25.0 -Scope CurrentUser -Force`
+- `Install-Module -Name Microsoft.Graph.DirectoryObjects -RequiredVersion 2.25.0 -Scope CurrentUser -Force`
 
 
 ### Verify Module Versions
@@ -163,6 +164,7 @@ Required Roles:
 - Teams Reader
 - SharePoint Administrator
 - Exchange Administrator
+- Identity Governance Administrator
 - InTune Administrator / Intune Read Only Operator
 - View-Only Organization Management
 - Graph Data Connect Administrator
