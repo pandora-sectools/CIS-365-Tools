@@ -91,7 +91,7 @@
             5.1.2.1   (L1)  Automated*   Ensure 'Per-user MFA' is disabled 
             5.1.2.2   (L1)  Automated    Ensure users cannot register applications 
             5.1.2.3   (L1)  Automated    Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes' 
-            5.1.2.4   (L1)  Automated*   Ensure access to the Entra admin center is restricted 
+            5.1.2.4   (L1)  Manual       Ensure access to the Entra admin center is restricted 
             5.1.2.5   (L2)  Manual       Ensure the option to remain signed in is hidden 
             5.1.2.6   (L2)  Manual       Ensure 'LinkedIn account connections' is disabled 
 
