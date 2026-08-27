@@ -12,3 +12,9 @@ Write-Host "Get-MalwareFilterPolicy | Where-Object { $_.Name -eq `"Default`" }"
 $DefaultPolicy = Get-MalwareFilterPolicy | Where-Object { $_.Name -eq "Default" }
 
 $DefaultPolicy | Format-List Identity, EnableInternalSenderAdminNotifications, InternalSenderAdminAddress
+
+if ($DefaultPolicy.EnableInternalSenderAdminNotifications -eq $true) {
+    Write-Host "** PASS : Notifications for internal users sending malware are enabled. **"
+} else {
+    Write-Host "** FAIL : Notifications for internal users sending malware are disabled. **"
+}
