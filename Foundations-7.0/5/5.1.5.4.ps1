@@ -19,44 +19,51 @@ $Policies = @(
     }
 )
 
-$AuditReport = foreach ($Policy in $Policies) {
+if ( -not $PassLifetimePolicy.isEnabled ) {
+    Write-Host "** FAIL ** : Pass Lifetime Policy is disabled. **"
+    return
+}
 
-    $PasswordLifetime = $Policy.Policy |
+$AuditReport = [System.Collections.Generic.List[Object]]::new()
+
+foreach ($Policy in $Policies) {
+
+    $PasswordLifetime = $Policy.Policy | 
         Where-Object { $_.restrictionType -eq "passwordLifetime" }
 
-    $MaxLifetimeDays = [System.Xml.XmlConvert]::ToTimeSpan(
-        $PasswordLifetime.maxLifetime
-    ).TotalDays
-
-    $CreatedAfterValid = (
-        $PasswordLifetime.restrictForAppsCreatedAfterDateTime -eq "0001-01-01T00:00:00Z" -or
-        [datetime]$PasswordLifetime.restrictForAppsCreatedAfterDateTime -le (Get-Date)
-    )
-
-    $AuditState = (
-        $PasswordLifetime.state -eq "enabled" -and
-        $MaxLifetimeDays -le 180 -and
-        $CreatedAfterValid
-    )
-
-    [PSCustomObject]@{
+    $Obj = [PSCustomObject]@{
         Policy            = $Policy.Name
         State             = $PasswordLifetime.state
         MaxLifetime       = $PasswordLifetime.maxLifetime
-        MaxLifetimeDays   = $MaxLifetimeDays
+        MaxLifetimeDays   = $null
         CreatedAfter      = $PasswordLifetime.restrictForAppsCreatedAfterDateTime
-        CreatedAfterValid = $CreatedAfterValid
-        AuditState        = $AuditState
+        CreatedAfterValid = $false
+        AuditState        = "PASS"
     }
+
+    if ($PasswordLifetime.MaxLifetime) {
+        $Obj.MaxLifetimeDays = [System.Xml.XmlConvert]::ToTimeSpan( $PasswordLifetime.MaxLifetime ).TotalDays
+    }
+    
+    if ($Obj.CreatedAfter) {
+        if ($Obj.CreatedAfter -eq "0001-01-01T00:00:00Z") { $Obj.CreatedAfterValid = $true }
+        if ([datetime]$Obj.CreatedAfter -le (Get-Date)) { $Obj.CreatedAfterValid = $true }
+    }
+
+    if ( -not $Obj.CreatedAfterValid ) {$Obj.AuditState = "FAIL"}
+    if ( -not $PasswordLifetime) {$Obj.AuditState = "FAIL"}
+    if ($null -eq $Obj.MaxLifetimeDays) {$Obj.AuditState = "FAIL"}
+    if ( $Obj.MaxLifetimeDays -gt 180 ) { $Obj.AuditState = "FAIL" }
+    if ( $Obj.State -ne "enabled" ) {$Obj.AuditState = "FAIL"}
+    
+    $AuditReport.add($Obj)
 }
 
-$AuditReport | Format-Table -AutoSize
-
-if (
-    $PassLifetimePolicy.isEnabled -eq $true -and
-    ($AuditReport.AuditState -notcontains $false)
-) {
-    Write-Host "** PASS **"
+$PassingPolicies = $AuditReport | Where-Object { $_.AuditState -eq "PASS" }
+if (@($PassingPolicies).Count -eq @($AuditReport).Count) {
+    Write-Host "** PASS : Compliant Password Policy found.**"
+    $AuditReport | Format-Table -AutoSize
 } else {
-    Write-Host "** FAIL **"
+    Write-Host "** FAIL : Policy does not implement benchmark requirements.**"
+    $AuditReport | Format-Table -AutoSize
 }

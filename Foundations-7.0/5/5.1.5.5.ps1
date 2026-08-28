@@ -19,35 +19,49 @@ $Policies = @(
     }
 )
 
-$AuditReport = foreach ($Policy in $Policies) {
+if (-not $PasswordPolicy.isEnabled) {
+    Write-Host "** FAIL ** : Password Policy is disabled. **"
+    return
+}
+
+$AuditReport = [System.Collections.Generic.List[Object]]::new()
+
+foreach ($Policy in $Policies) {
 
     $CustomPasswordPolicy = $Policy.Policy |
         Where-Object { $_.restrictionType -eq "customPasswordAddition" }
 
-    $CreatedAfterValid = (
-        $CustomPasswordPolicy.restrictForAppsCreatedAfterDateTime -eq "0001-01-01T00:00:00Z" -or
-        [datetime]$CustomPasswordPolicy.restrictForAppsCreatedAfterDateTime -le (Get-Date)
-    )
-
-    [PSCustomObject]@{
+    $Obj = [PSCustomObject]@{
         Policy            = $Policy.Name
         State             = $CustomPasswordPolicy.state
         CreatedAfter      = $CustomPasswordPolicy.restrictForAppsCreatedAfterDateTime
-        CreatedAfterValid = $CreatedAfterValid
-        AuditState        = (
-            $CustomPasswordPolicy.state -eq "enabled" -and
-            $CreatedAfterValid
-        )
+        CreatedAfterValid = $false
+        AuditState        = "PASS"
     }
+
+    if ($Obj.CreatedAfter) {
+        if ($Obj.CreatedAfter -eq "0001-01-01T00:00:00Z") {
+            $Obj.CreatedAfterValid = $true
+        }
+
+        if ([datetime]$Obj.CreatedAfter -le (Get-Date)) {
+            $Obj.CreatedAfterValid = $true
+        }
+    }
+
+    if (-not $CustomPasswordPolicy) { $Obj.AuditState = "FAIL" }
+    if (-not $Obj.CreatedAfterValid) { $Obj.AuditState = "FAIL" }
+    if ($Obj.State -ne "enabled") { $Obj.AuditState = "FAIL" }
+
+    $AuditReport.Add($Obj)
 }
 
-$AuditReport | Format-Table -AutoSize
+$PassingPolicies = $AuditReport | Where-Object { $_.AuditState -eq "PASS" }
 
-if (
-    $PasswordPolicy.isEnabled -eq $true -and
-    ($AuditReport.AuditState -notcontains $false)
-) {
-    Write-Host "** PASS **"
+if (@($PassingPolicies).Count -eq @($AuditReport).Count) {
+    Write-Host "** PASS : Compliant Password Policy found. **"
+    $AuditReport | Format-Table -AutoSize
 } else {
-    Write-Host "** FAIL **"
+    Write-Host "** FAIL : Policy does not implement benchmark requirements. **"
+    $AuditReport | Format-Table -AutoSize
 }

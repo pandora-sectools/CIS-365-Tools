@@ -19,42 +19,59 @@ $Policies = @(
     }
 )
 
-$AuditReport = foreach ($Policy in $Policies) {
+if (-not $CertificatePolicy.isEnabled) {
+    Write-Host "** FAIL : Certificate Policy is disabled. **"
+    return
+}
+
+$AuditReport = [System.Collections.Generic.List[Object]]::new()
+
+foreach ($Policy in $Policies) {
 
     $CertificateLifetime = $Policy.Policy |
         Where-Object { $_.restrictionType -eq "asymmetricKeyLifetime" }
 
-    $MaxLifetimeDays = [System.Xml.XmlConvert]::ToTimeSpan(
-        $CertificateLifetime.maxLifetime
-    ).TotalDays
-
-    $CreatedAfterValid = (
-        $CertificateLifetime.restrictForAppsCreatedAfterDateTime -eq "0001-01-01T00:00:00Z" -or
-        [datetime]$CertificateLifetime.restrictForAppsCreatedAfterDateTime -le (Get-Date)
-    )
-
-    [PSCustomObject]@{
+    $Obj = [PSCustomObject]@{
         Policy            = $Policy.Name
         State             = $CertificateLifetime.state
         MaxLifetime       = $CertificateLifetime.maxLifetime
-        MaxLifetimeDays   = $MaxLifetimeDays
+        MaxLifetimeDays   = $null
         CreatedAfter      = $CertificateLifetime.restrictForAppsCreatedAfterDateTime
-        CreatedAfterValid = $CreatedAfterValid
-        AuditState        = (
-            $CertificateLifetime.state -eq "enabled" -and
-            $MaxLifetimeDays -le 180 -and
-            $CreatedAfterValid
-        )
+        CreatedAfterValid = $false
+        AuditState        = "PASS"
     }
+
+    if ($CertificateLifetime.maxLifetime) {
+        $Obj.MaxLifetimeDays = [System.Xml.XmlConvert]::ToTimeSpan(
+            $CertificateLifetime.maxLifetime
+        ).TotalDays
+    }
+
+    if ($Obj.CreatedAfter) {
+        if ($Obj.CreatedAfter -eq "0001-01-01T00:00:00Z") {
+            $Obj.CreatedAfterValid = $true
+        }
+
+        if ([datetime]$Obj.CreatedAfter -le (Get-Date)) {
+            $Obj.CreatedAfterValid = $true
+        }
+    }
+
+    if (-not $CertificateLifetime) { $Obj.AuditState = "FAIL" }
+    if ($null -eq $Obj.MaxLifetimeDays) { $Obj.AuditState = "FAIL" }
+    if ($Obj.MaxLifetimeDays -gt 180) { $Obj.AuditState = "FAIL" }
+    if (-not $Obj.CreatedAfterValid) { $Obj.AuditState = "FAIL" }
+    if ($Obj.State -ne "enabled") { $Obj.AuditState = "FAIL" }
+
+    $AuditReport.Add($Obj)
 }
 
-$AuditReport | Format-Table -AutoSize
+$PassingPolicies = $AuditReport | Where-Object { $_.AuditState -eq "PASS" }
 
-if (
-    $CertificatePolicy.isEnabled -eq $true -and
-    ($AuditReport.AuditState -notcontains $false)
-) {
-    Write-Host "** PASS **"
+if (@($PassingPolicies).Count -eq @($AuditReport).Count) {
+    Write-Host "** PASS : Compliant Certificate Policy found. **"
+    $AuditReport | Format-Table -AutoSize
 } else {
-    Write-Host "** FAIL **"
+    Write-Host "** FAIL : Policy does not implement benchmark requirements. **"
+    $AuditReport | Format-Table -AutoSize
 }
