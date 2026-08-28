@@ -19,6 +19,8 @@ $SyncReport = [System.Collections.Generic.List[Object]]::new()
 
 foreach ($Sync in $OnPremSync) {
 
+    Write-Host "." -NoNewline
+
     $Obj = [PSCustomObject]@{
         PasswordSyncEnabled = $Sync.features.passwordSyncEnabled
         AuditState          = "PASS"
@@ -35,12 +37,12 @@ $FailingSync = $SyncReport |
     Where-Object { $_.AuditState -eq "FAIL" }
 
 if (@($SyncReport).Count -eq 0) {
-    Write-Host "** N/A : No on-premises synchronization configuration was found. **"
+    Write-Host "`n** N/A : No on-premises synchronization configuration was found. **"
 }
 elseif (@($FailingSync).Count -gt 0) {
-    Write-Host "** FAIL : Password hash synchronization is not enabled. **"
+    Write-Host "`n** FAIL : Password hash synchronization is not enabled. **"
     $SyncReport | Format-List
 } else {
-    Write-Host "** PASS : Password hash synchronization is enabled. **"
+    Write-Host "`n** PASS : Password hash synchronization is enabled. **"
     $SyncReport | Format-List
 }

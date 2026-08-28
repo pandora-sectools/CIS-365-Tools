@@ -41,6 +41,8 @@ $ReportSubmissionPolicy = Get-ReportSubmissionPolicy |  Select-Object -Property 
 
 foreach ($Policy in $ReportSubmissionPolicy) {
 
+    Write-Host "." -NoNewline
+
     $Obj = [PSCustomObject]@{
         ReportJunkToCustomizedAddress               = $Policy.ReportJunkToCustomizedAddress
         ReportNotJunkToCustomizedAddress            = $Policy.ReportNotJunkToCustomizedAddress
@@ -67,9 +69,9 @@ foreach ($Policy in $ReportSubmissionPolicy) {
 
 $PassingRSPs = $RSPReport | Where-Object { $_.AuditState -eq "PASS" }
 if (@($PassingRSPs).Count -gt 0) {
-    Write-Host "** PASS : Found a compliant Teams Report Submission Policy. **"
+    Write-Host "`n** PASS : Found a compliant Teams Report Submission Policy. **"
     $PassingRSPs | Format-List
 } else {
-    Write-Host "** FAIL : There are no qualifying Teams Report Submission Policies. **"
+    Write-Host "`n** FAIL : There are no qualifying Teams Report Submission Policies. **"
     $RSPReport | Format-List
 }

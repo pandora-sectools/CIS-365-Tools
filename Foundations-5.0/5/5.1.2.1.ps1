@@ -1,4 +1,4 @@
-# 5.1.2.1 Ensure 'Per-user MFA' is disabled (Automated)
+# 5.1.2.1 Ensure 'Per-user MFA' is disabled (Manual)
 # E3 Level 1
 # E5 Level 1
 
@@ -8,6 +8,8 @@ $Users = Get-MgUser -All
 $MFAReport = [System.Collections.Generic.List[Object]]::new()
 
 foreach ($User in $Users) {
+
+    Write-Host "." -NoNewline
 
     $URI = "https://graph.microsoft.com/beta/users/$($User.Id)/authentication/requirements"
     $MFAState = Invoke-MgGraphRequest -Method GET -Uri $URI
@@ -27,9 +29,9 @@ $FailingUsers = $MFAReport |
     Where-Object { $_.AuditState -eq "FAIL" }
 
 if (@($FailingUsers).Count -gt 0) {
-    Write-Host "** FAIL : Per-user MFA is enabled or enforced for one or more users. **"
+    Write-Host "`n** FAIL : Per-user MFA is enabled or enforced for one or more users. **"
     $FailingUsers | Format-List
 } else {
-    Write-Host "** PASS : Per-user MFA is disabled for all users. **"
+    Write-Host "`n** PASS : Per-user MFA is disabled for all users. **"
     $MFAReport | Format-List
 }
