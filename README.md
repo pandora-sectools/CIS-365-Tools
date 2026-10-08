@@ -1,14 +1,16 @@
 # CIS-365-Tools - Helper tools for CIS Benchmarking
 
 
-**NOTE** The scripts in this repoistory are untested and sometimes incomplete. Not all Benchmark versions
+**NOTE :** The scripts in this repoistory are untested and sometimes incomplete. Not all Benchmark versions
 have a working published script.
 
 Current Supported CIS benchmark versions:
-- **7.0 Level 1**
+- **Foundations 5.0 (L1,L2)**
+- **Foundations 7.0 (L1,L2)**
 
 
 ### Required Testing Tools
+```
 CLI Programs:
 - Windows Terminal
 - Microsoft.AzureCLI
@@ -30,45 +32,16 @@ CLI Programs:
     - Microsoft.Graph.Identity.Signins                                      2.36.1
     - Microsoft.Graph.Reports                                               2.36.1
     - Microsoft.Graph.Users                                                 2.36.1
+```
 
-**NOTE** Be sure to remove all Az powershell modules. they conflict with the AzureCLI Tools
+**NOTE :** Be sure to remove all Az powershell modules. They conflict with the AzureCLI Tools,
 and can cause these scripts to not run correctly! Remove with this command:
 
 ```powershell
     Get-Module -ListAvailable "Az.*" | ForEach {Uninstall-Module -Name $_.Name}
-
 ```
 
 
 ### Required Test User Permissions
-
-Required Roles:
-
-- Global Reader
-- Reports Reader
-- Security Reader
-- Teams Reader
-- SharePoint Administrator
-- Exchange Administrator
-- Identity Governance Administrator
-- InTune Administrator / Intune Read Only Operator
-- View-Only Organization Management
-- Graph Data Connect Administrator
-
-MGGraph Permissions:
-
-- Organization.Read.All
-- Directory.Read.All
-- Policy.Read.All
-- Domain.Read.All
-- User.Read.All
-- Group.Read.All
-- AuditLog.Read.All
-- RoleManagement.Read.Directory
-- UserAuthenticationMethod.Read.All
-- OrgSettings-Forms.Read.All
-- OrgSettings-AppsAndServices.Read.All
-- DeviceManagementConfiguration.Read.All
-- DeviceManagementManagedDevices.Read.All
-- DeviceManagementServiceConfig.Read.All
-- OnPremDirectorySynchronization.Read.All
+For information on Setup & Configuration of a CIS testing account, please read
+[Docs/test-account-config.md](Docs/test-account-config.md)

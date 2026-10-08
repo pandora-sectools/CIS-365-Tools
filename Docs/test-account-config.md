@@ -1,12 +1,9 @@
 # Test Account setup
 
-**NOTE:** 
-
 To setup a test account, the following permissions are required.
 
 ### Required Test User Permissions
 
-Required Roles:
 - Global Reader
 - Reports Reader
 - Security Reader
@@ -19,7 +16,8 @@ Required Roles:
 - Graph Data Connect Administrator
 - Privileged Role Administrator \[1\]
 
-MGGraph Permissions:
+### MGGraph App Permissions:
+
 - Organization.Read.All
 - Directory.Read.All
 - Policy.Read.All

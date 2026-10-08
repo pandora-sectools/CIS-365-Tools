@@ -75,7 +75,7 @@
     5.1 Identity
 
         5.1.2 Users
-            5.1.2.1    (L1)     Automated*    Ensure 'Per-user MFA' is disabled                                                                             (TODO) 
+            5.1.2.1    (L1)     Automated*    Ensure 'Per-user MFA' is disabled
             5.1.2.2    (L2)     Automated     Ensure third party integrated applications are not allowed                                                     
             5.1.2.3    (L1)     Automated     Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes'                                        
             5.1.2.4    (L1)     Manual        Ensure access to the Entra admin center is restricted                                                         (TODO) 
@@ -90,12 +90,12 @@
             5.1.5.2    (L1)     Automated     Ensure the admin consent workflow is enabled
 
         5.1.6 External Identities
-            5.1.6.1    (L2)     Manual        Ensure that collaboration invitations are sent to allowed domains only                                        (TODO) 
-            5.1.6.2    (L1)     Automated     Ensure that guest user access is restricted                                                                   (TODO) 
+            5.1.6.1    (L2)     Manual        Ensure that collaboration invitations are sent to allowed domains only
+            5.1.6.2    (L1)     Automated     Ensure that guest user access is restricted
             5.1.6.3    (L2)     Automated     Ensure guest user invitations are limited to the Guest Inviter role                                           (TODO) 
    
         5.1.8 Hybrid management
-            5.1.8.1    (L1)     Automated*    Ensure that password hash sync is enabled for hybrid deployments                                              (TODO) 
+            5.1.8.1    (L1)     Automated*    Ensure that password hash sync is enabled for hybrid deployments
 
 
     5.2 Protection
@@ -115,12 +115,12 @@
             5.2.2.12   (L1)     Automated     Ensure the device code sign-in flow is blocked 
 
         5.2.3 Authentication Methods
-            5.2.3.1    (L1)     Automated     Ensure Microsoft Authenticator is configured to protect against MFA fatigue                                   (TODO) 
-            5.2.3.2    (L1)     Automated     Ensure custom banned passwords lists are used                                                                 (TODO) 
-            5.2.3.3    (L1)     Automated     Ensure password protection is enabled for on-prem Active Directory                                            (TODO) 
-            5.2.3.4    (L1)     Automated     Ensure all member users are 'MFA capable'                                                                     (TODO) 
-            5.2.3.5    (L1)     Automated     Ensure weak authentication methods are disabled                                                               (TODO) 
-            5.2.3.6    (L1)     Automated*    Ensure system-preferred multifactor authentication is enabled                                                 (TODO) 
+            5.2.3.1    (L1)     Automated     Ensure Microsoft Authenticator is configured to protect against MFA fatigue
+            5.2.3.2    (L1)     Automated     Ensure custom banned passwords lists are used
+            5.2.3.3    (L1)     Automated     Ensure password protection is enabled for on-prem Active Directory
+            5.2.3.4    (L1)     Automated     Ensure all member users are 'MFA capable'
+            5.2.3.5    (L1)     Automated     Ensure weak authentication methods are disabled
+            5.2.3.6    (L1)     Automated*    Ensure system-preferred multifactor authentication is enabled
 
         5.2.4 Password reset
             5.2.4.1    (L1)     Manual        Ensure 'Self service password reset enabled' is set to 'All'                                                  (TODO) 
@@ -136,23 +136,23 @@
 6 Exchange admin center
 
     6.1 Audit
-            6.1.1      (L1)     Automated     Ensure 'AuditDisabled' organizationally is set to 'False'                                                     (TODO) 
-            6.1.2      (L1)     Automated     Ensure mailbox audit actions are configured                                                                   (TODO) 
-            6.1.3      (L1)     Automated     Ensure 'AuditBypassEnabled' is not enabled on mailboxes                                                       (TODO) 
+            6.1.1      (L1)     Automated     Ensure 'AuditDisabled' organizationally is set to 'False'
+            6.1.2      (L1)     Automated     Ensure mailbox audit actions are configured
+            6.1.3      (L1)     Automated     Ensure 'AuditBypassEnabled' is not enabled on mailboxes
 
     6.2 Mail flow
-            6.2.1      (L1)     Automated     Ensure all forms of mail forwarding are blocked and/or disabled                                               (TODO) 
-            6.2.2      (L1)     Automated     Ensure mail transport rules do not whitelist specific domains                                                 (TODO) 
+            6.2.1      (L1)     Automated     Ensure all forms of mail forwarding are blocked and/or disabled
+            6.2.2      (L1)     Automated     Ensure mail transport rules do not whitelist specific domains
             6.2.3      (L1)     Automated     Ensure email from external senders is identified                                                                  
 
     6.3 Roles
             6.3.1      (L2)     Automated     Ensure users installing Outlook add-ins is not allowed                                                        (TODO) 
 
     6.5 Settings
-            6.5.1      (L1)     Automated     Ensure modern authentication for Exchange Online is enabled                                                   (TODO) 
-            6.5.2      (L1)     Automated     Ensure MailTips are enabled for end users                                                                     (TODO) 
+            6.5.1      (L1)     Automated     Ensure modern authentication for Exchange Online is enabled
+            6.5.2      (L1)     Automated     Ensure MailTips are enabled for end users
             6.5.3      (L2)     Automated     Ensure additional storage providers are restricted in Outlook on the web                                      (TODO) 
-            6.5.4      (L1)     Automated     Ensure SMTP AUTH is disabled                                                                                  (TODO) 
+            6.5.4      (L1)     Automated     Ensure SMTP AUTH is disabled
 
 
 7 SharePoint admin center
@@ -161,14 +161,14 @@
             7.2.1      (L1)     Automated     Ensure modern authentication for SharePoint applications is required  
             7.2.2      (L1)     Automated     Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled  
             7.2.3      (L1)     Automated     Ensure external content sharing is restricted                                                                       
-            7.2.4      (L2)     Automated     Ensure OneDrive content sharing is restricted                                                                 (TODO) 
-            7.2.5      (L2)     Automated     Ensure that SharePoint guest users cannot share items they don't own                                          (TODO) 
-            7.2.6      (L2)     Automated     Ensure SharePoint external sharing is managed through domain whitelist/blacklists                             (TODO) 
+            7.2.4      (L2)     Automated     Ensure OneDrive content sharing is restricted
+            7.2.5      (L2)     Automated     Ensure that SharePoint guest users cannot share items they don't own
+            7.2.6      (L2)     Automated     Ensure SharePoint external sharing is managed through domain whitelist/blacklists
             7.2.7      (L1)     Automated     Ensure link sharing is restricted in SharePoint and OneDrive
             7.2.8      (L2)     Manual        Ensure external sharing is restricted by security group                                                       (TODO) 
             7.2.9      (L1)     Automated     Ensure guest access to a site or OneDrive will expire automatically
-            7.2.10     (L1)     Automated     Ensure reauthentication with verification code is restricted                                                  (TODO) 
-            7.2.11     (L1)     Automated     Ensure the SharePoint default sharing link permission is set                                                  (TODO) 
+            7.2.10     (L1)     Automated     Ensure reauthentication with verification code is restricted
+            7.2.11     (L1)     Automated     Ensure the SharePoint default sharing link permission is set
 
     7.3 Settings
             7.3.1      (L2)     Automated     Ensure Office 365 SharePoint infected files are disallowed for download                                       (TODO) 
@@ -183,10 +183,10 @@
             8.1.2      (L1)     Automated     Ensure users can't send emails to a channel email address                                                           
 
     8.2 Users
-            8.2.1      (L2)     Automated     Ensure external domains are restricted in the Teams admin center                                              (TODO) 
-            8.2.2      (L1)     Automated     Ensure communication with unmanaged Teams users is disabled                                                   (TODO) 
-            8.2.3      (L1)     Automated     Ensure external Teams users cannot initiate conversations                                                     (TODO) 
-            8.2.4      (L1)     Automated     Ensure communication with Skype users is disabled                                                             (TODO) 
+            8.2.1      (L2)     Automated     Ensure external domains are restricted in the Teams admin center
+            8.2.2      (L1)     Automated     Ensure communication with unmanaged Teams users is disabled
+            8.2.3      (L1)     Automated     Ensure external Teams users cannot initiate conversations
+            8.2.4      (L1)     Automated     Ensure communication with Skype users is disabled
 
     8.3 Teams devices
                     Intentionally Left Blank
@@ -196,12 +196,12 @@
 
     8.5 Meetings
             8.5.1      (L2)     Automated     Ensure anonymous users can't join a meeting                                                                   (TODO)
-            8.5.2      (L1)     Automated     Ensure anonymous users and dial-in callers can't start a meeting                                              (TODO)
-            8.5.3      (L1)     Automated     Ensure only people in my org can bypass the lobby                                                             (TODO)
-            8.5.4      (L1)     Automated     Ensure users dialing in can't bypass the lobby                                                                (TODO)
-            8.5.5      (L2)     Automated     Ensure meeting chat does not allow anonymous users                                                            (TODO)
+            8.5.2      (L1)     Automated     Ensure anonymous users and dial-in callers can't start a meeting
+            8.5.3      (L1)     Automated     Ensure only people in my org can bypass the lobby
+            8.5.4      (L1)     Automated     Ensure users dialing in can't bypass the lobby
+            8.5.5      (L2)     Automated     Ensure meeting chat does not allow anonymous users
             8.5.6      (L2)     Automated     Ensure only organizers and co-organizers can present                                                          (TODO)
-            8.5.7      (L1)     Automated     Ensure external participants can't give or request control                                                    (TODO)
+            8.5.7      (L1)     Automated     Ensure external participants can't give or request control
             8.5.8      (L2)     Automated     Ensure external meeting chat is off                                                                           (TODO)
             8.5.9      (L2)     Automated     Ensure meeting recording is off by default                                                                    (TODO)
 
@@ -212,7 +212,7 @@
 9 Microsoft Fabric
     9.1 Tenant settings
             9.1.1      (L1)     Automated     Ensure guest user access is restricted
-            9.1.2      (L1)     Manual        Ensure external user invitations are restricted                                                               (TODO) 
+            9.1.2      (L1)     Manual        Ensure external user invitations are restricted
             9.1.3      (L1)     Manual        Ensure guest access to content is restricted                                                                  (TODO) 
             9.1.4      (L1)     Manual        Ensure 'Publish to web' is restricted                                                                         (TODO) 
             9.1.5      (L2)     Manual        Ensure 'Interact with and share R and Python' visuals is 'Disabled'                                           (TODO) 
